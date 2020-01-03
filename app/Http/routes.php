@@ -15,7 +15,7 @@ Route::group(['middleware' => ['web']],function () {
 
     //---------------------前端------------------------
     Route::get('/','frontend\IndexController@index');
-    Route::get('/beauty/{id}','frontend\IndexController@beauty')->where(['id' => '[0-9]+']);
+    Route::get('/beauty/{id}.html','frontend\IndexController@beauty')->where(['id' => '[0-9]+']);
     Route::get('/contact','frontend\IndexController@contact');
 
 
