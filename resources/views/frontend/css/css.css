@@ -187,7 +187,15 @@ button {
 .header .search {
     padding-top: 10px;
     clear: both;
-    text-align: right;
+    /*text-align: center;*/
+}
+
+.header .search .memberbox{
+    float: right;
+}
+
+.header .search .memberbox a{
+
 }
 
 .header .search input {
@@ -816,4 +824,20 @@ button {
     border-bottom: 1px solid #FCE089;
     box-sizing: border-box;
     cursor: pointer;
+}
+
+.memberbox ul>li {
+    float: left;
+    font-size: 17px;
+    color: #999;
+    cursor: pointer;
+}
+.reg_share {
+    margin-right: 25px;
+    position: relative;
+}
+
+.memberbox a {
+    color: #333;
+    text-decoration: none;
 }

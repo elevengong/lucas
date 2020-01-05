@@ -22,6 +22,7 @@
                             <th width="100">属性名称</th>
                             <th width="80">Key</th>
                             <th width="80">Value</th>
+                            <th width="80">网站基础属性(基础属性不可删除)</th>
                             <th width="100">操作</th>
                         </tr>
                         </thead>
@@ -33,15 +34,18 @@
                                 <td>{{$data['name']}}</td>
                                 <td>{{$data['key']}}</td>
                                 <td>{{$data['value']}}</td>
+                                <td>{{$data['base']==0 ?'不是':'是'}}</td>
                                 <td class="td-manage">
                                     <a title="编辑" href="javascript:edit_static({{$data['id']}})" class="ml-5"
                                        style="text-decoration:none">
                                         <i class="Hui-iconfont">&#xe6df;</i>
                                     </a>
+                                    @if($data['base']==0)
                                     <a title="删除" href="javascript:del_static('{{$data['id']}}')" class="ml-5"
                                        style="text-decoration:none">
                                         <i class="Hui-iconfont">&#xe6e2;</i>
                                     </a>
+                                        @endif
                                 </td>
                             </tr>
                         @endforeach

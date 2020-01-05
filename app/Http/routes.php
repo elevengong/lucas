@@ -13,10 +13,21 @@
 
 Route::group(['middleware' => ['web']],function () {
 
-    //---------------------前端------------------------
+ //---------------------前端------------------------------------------------
     Route::get('/','frontend\IndexController@index');
     Route::get('/beauty/{id}.html','frontend\IndexController@beauty')->where(['id' => '[0-9]+']);
     Route::get('/contact','frontend\IndexController@contact');
+
+    Route::any('/login.html','frontend\IndexController@login');
+
+    Route::any('/register.html','frontend\IndexController@register');
+
+
+    Route::get('/user/logout','frontend\IndexController@logout');
+
+    Route::get('/agent/{agent_id}','frontend\IndexController@agententrance')->where(['agent_id' => '[0-9]+']);
+
+
 
 
 
@@ -27,7 +38,7 @@ Route::group(['middleware' => ['web']],function () {
 });
 
 
-//---------------------后台------------------------
+//---------------------后台------------------------------------------------
 Route::group(['middleware' => ['web','admin.login']],function () {
     Route::get('/backend/index','backend\IndexController@index');
     Route::post('/backend/logout','backend\IndexController@logout');
@@ -38,11 +49,11 @@ Route::group(['middleware' => ['web','admin.login']],function () {
     Route::delete('/backend/admin/delete/{admin_id}','backend\AdminController@delete')->where(['admin_id' => '[0-9]+']);
     Route::post('/backend/admin/add','backend\AdminController@adminadd');
 
-    //国家
-    Route::any('/backend/nation/list','backend\NationController@nationlist');
-    Route::any('/backend/nation/nationedit/{id}','backend\NationController@nationedit')->where(['id' => '[0-9]+']);
-    Route::any('/backend/nation/nationadd','backend\NationController@nationadd');
-    Route::delete('/backend/nation/delete/{id}','backend\NationController@delete')->where(['id' => '[0-9]+']);
+    //地区
+    Route::any('/backend/area/list','backend\AreaController@arealist');
+    Route::any('/backend/area/areaedit/{id}','backend\AreaController@areaedit')->where(['id' => '[0-9]+']);
+    Route::any('/backend/area/areaadd','backend\AreaController@areaadd');
+    Route::delete('/backend/area/delete/{id}','backend\AreaController@delete')->where(['id' => '[0-9]+']);
 
     //贵妃管理
     Route::any('/backend/girls/girllist','backend\GirlsController@girllist');
@@ -56,6 +67,9 @@ Route::group(['middleware' => ['web','admin.login']],function () {
     Route::any('/backend/girls/webuploader/{id}','backend\GirlsController@webuploader')->where(['id' => '[0-9]+']);
 
 
+    //用户管理
+    Route::any('/backend/member/lists','backend\MemberController@lists');
+    Route::any('/backend/member/edit/{id}','backend\MemberController@edit')->where(['id' => '[0-9]+']);
 
     //设置常用属性
     Route::get('/backend/attributelist','backend\IndexController@attributelist');

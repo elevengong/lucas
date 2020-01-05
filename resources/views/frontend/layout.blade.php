@@ -2,12 +2,10 @@
 <html lang="zh-cn">
 <head>
     <meta charset="utf-8">
-    <title>TTvip - 美女号外</title>
-    <meta name="keywords" content="TTvip，美女号外，狼群，SgWolf，SgWolves，天上人间，888，8090，727，Singapore Escorts, Singapore Sex Freelance, Backpage, Locanto, 新加坡陪游，高端美女，Singapore Massage, 新加坡按摩，" />
-    <meta name="description" content="Singapore's most reliable adult escort website: www.TTvip7.comFocusing on quality, you are sure to find your desired companion! Prices ranged from $100SGD-$260SGD generally.
-Website only feature actual person picture and service attitude guaranteed! No fake photos and thousands of field reports from fellow brothers to review on.
-All brothers are welcome to visit and leave real reviews! Most of the girls are from China and for bros who cannot communicate in Mandarin, you can always download a translator to assist. You get to contact directly with the girls with no agent involved! (Do bookmark the website)
-http://www.TTvip7.com Our motto: Quality and Reliability" />
+    <title>{{$base['title']}}</title>
+    <meta name="keywords" content="{!! $base['keywords'] !!}" />
+    <meta name="description" content="{!!$base['description']!!}" />
+    <link href="http://manhua.com/resources/views/frontend/pc/images/favicon.ico" rel="shortcut icon" />
     <link rel="stylesheet" href="<?php echo asset( "/resources/views/frontend/css/css.css?ver=1.0") ?>">
 </head>
 
@@ -15,8 +13,36 @@ http://www.TTvip7.com Our motto: Quality and Reliability" />
 <div class="header">
     <div class="logo wrap">
         <h1><a href="/">&nbsp;</a></h1>
-        <div class="title">TTVIP7.NET</div>
+        <div class="title">{{$base['title']}}</div>
 
+    </div>
+    <div class="search wrap">
+        <div style="width: 450px;float: left">
+            <form method="get" action="index.php">
+                <input type="text" name="key" placeholder="输入关键词"><button>搜索SEARCH</button>
+            </form>
+        </div>
+
+        @if(empty($username))
+        <div class="memberbox" style=""><a href="/login.html"><button>登陆</button></a><a href="/register.html"><button>注册</button></a></div>
+            @else
+
+            <div class="memberbox">
+                <ul>
+                    <li class="reg_share">
+                        <span>用户:<a href="/user/center.html">eleven</a></span>
+                    </li>
+                    <li class="reg_share">
+                        <span>新币:<a href="#">{{$coin}}个</a></span>
+                    </li>
+                    <li class="reg_share">
+                        <span><a href="/user/logout">注销</a></span>
+                    </li>
+
+                </ul>
+            </div>
+
+        @endif
     </div>
     <div class="nav wrap">
         <ul>
@@ -29,10 +55,10 @@ http://www.TTvip7.com Our motto: Quality and Reliability" />
             <li><a href="index.php?type=2" ><font color="black">Massage/按摩</font></a></li>
         </ul>
     </div>
-    <div class="search wrap"><form method="get" action="index.php"><input type="text" name="key" placeholder="输入关键词"><button>搜索SEARCH</button></form></div>
+
 </div>
 @yield('content')
-<div class="footer wrap">Copyright &copy; 2019 SEX141SG.COM All Right Reserved.</div>
+<div class="footer wrap">{!! $base['copyright'] !!}</div>
 <div style="display: none;">
     <!-- 统计 -->
 </div></body>

@@ -79,7 +79,7 @@
             </dd>
 
             <dt>
-                <i class="Hui-iconfont">&#xe616;</i> 贵妃列表
+                <i class="Hui-iconfont">&#xe616;</i> 贵妃管理
                 <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
             </dt>
 
@@ -91,13 +91,25 @@
             </dd>
 
             <dt>
-                <i class="Hui-iconfont">&#xe616;</i> 国籍管理
+                <i class="Hui-iconfont">&#xe616;</i> 用户管理
                 <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
             </dt>
 
             <dd style="display: none">
                 <ul>
-                    <li><a data-href="{{url('/backend/nation/list')}}" href="javascript:void(0)" onclick="clicklink(this)" title="国家列表">国家列表</a></li>
+                    <li><a data-href="{{url('/backend/member/lists')}}" href="javascript:void(0)" onclick="clicklink(this)" title="用户列表">用户列表</a></li>
+
+                </ul>
+            </dd>
+
+            <dt>
+                <i class="Hui-iconfont">&#xe616;</i> 地区管理
+                <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
+            </dt>
+
+            <dd style="display: none">
+                <ul>
+                    <li><a data-href="{{url('/backend/area/list')}}" href="javascript:void(0)" onclick="clicklink(this)" title="地区列表">地区列表</a></li>
                 </ul>
             </dd>
 

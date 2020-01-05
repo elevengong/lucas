@@ -13,7 +13,7 @@ function opennewgirl() {
 function girladdprocess() {
     var name  = $.trim( $('#name').val() );
     var cover = $.trim( $('#cover').val() );
-    var nation_id  = $.trim( $('#nation_id').val() );
+    var area_id  = $.trim( $('#area_id').val() );
     var intro  = $.trim( $('#intro').val() );
     var service  = $.trim( $('#service').val() );
     var videolist  = $.trim( $('#videolist').val() );
@@ -29,9 +29,9 @@ function girladdprocess() {
         layer.msg('封面不能为空');
         return false;
     }
-    if(nation_id == '')
+    if(area_id == '')
     {
-        layer.msg('国籍不能为空');
+        layer.msg('地区不能为空');
         return false;
     }
     if(intro == '')
@@ -85,7 +85,7 @@ function girledit(id) {
 function girleditprocess(id) {
     var name  = $.trim( $('#name').val() );
     var cover = $.trim( $('#cover').val() );
-    var nation_id  = $.trim( $('#nation_id').val() );
+    var area_id  = $.trim( $('#area_id').val() );
     var intro  = $.trim( $('#intro').val() );
     var service  = $.trim( $('#service').val() );
     var videolist  = $.trim( $('#videolist').val() );
@@ -101,9 +101,9 @@ function girleditprocess(id) {
         layer.msg('封面不能为空');
         return false;
     }
-    if(nation_id == '')
+    if(area_id == '')
     {
-        layer.msg('国籍不能为空');
+        layer.msg('地区不能为空');
         return false;
     }
     if(intro == '')

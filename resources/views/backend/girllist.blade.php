@@ -38,7 +38,7 @@
                             <th width="20">ID</th>
                             <th width="50">名字</th>
                             <th width="60">封面</th>
-                            <th width="50">国籍</th>
+                            <th width="50">地区</th>
                             <th width="80">介绍</th>
                             <th width="80">服务</th>
                             <th width="80">视频地址</th>
@@ -56,7 +56,7 @@
                                 <td>{{$data['id']}}</td>
                                 <td><a style="color: green;" href="/backend/girls/girlphotolist/{{$data['id']}}">{{$data['name']}}</a></td>
                                 <td><a href="{{$data['cover']}}" target="_blank"><img src="{{$data['cover']}}" style="width:50px;" /></a></td>
-                                <td>{{$data['nation']}} &nbsp;&nbsp;<img src="{{$data['flag']}}" style="width:20px;" /></td>
+                                <td>{{$data['area_name']}}</td>
                                 <td>{{$data['intro']}}</td>
                                 <td>{{$data['service']}}</td>
                                 <td>{{$data['videolist']}}</td>

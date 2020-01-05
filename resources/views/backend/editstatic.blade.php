@@ -32,9 +32,16 @@
             </div>
         </div>
         <div class="col-xs-12 row cl">
-            <label class="form-label col-xs-3 col-sm-3">Key：</label>
+            <label class="form-label col-xs-3 col-sm-3">是否网站基础属性：</label>
             <div class="col-xs-9 col-sm-9">
-                <input type="text" class="input-text" value="{{$data['key']}}" id="key" name="key" />
+                <label  style="float: left;width: 100px;"><input name="base" type="radio" value="0" @if($data['base']==0) checked="checked" @else disabled = "false" @endif/>否 </label>
+                <label  style="float: left;"><input name="base" type="radio" value="1" @if($data['base']==1) checked="checked" @endif/>是 </label>
+            </div>
+        </div>
+        <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">Key：(网站基础属性key是不可修改)</label>
+            <div class="col-xs-9 col-sm-9">
+                <input type="text" class="input-text" value="{{$data['key']}}" @if($data['base']==1) readonly="readonly" @endif id="key" name="key" />
             </div>
         </div>
         <div class="col-xs-12 row cl">

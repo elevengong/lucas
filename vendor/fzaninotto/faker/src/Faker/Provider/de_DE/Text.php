@@ -924,7 +924,7 @@ und die Schmach abgetan würde, einen häßlichen Bart zu kriegen; wie Lotte
 sagte: "es ist genug!" und das Kind doch immer eifrig fortwusch, als wenn Viel
 mehr täte als Wenig—ich sage dir, Wilhelm, ich habe mit mehr Respekt nie einer
 Taufhandlung beigewohnt; und als Lotte heraufkam, hätte ich mich gern vor ihr
-niedergeworfen wie vor einem Propheten, der die Schulden einer Nation weggeweiht hat.
+niedergeworfen wie vor einem Propheten, der die Schulden einer Area weggeweiht hat.
 
 Des Abends konnte ich nicht umhin, in der Freude meines Herzens den Vorfall
 einem Manne zu erzählen, dem ich Menschensinn zutraute, weil er Verstand hat;

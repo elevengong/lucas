@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\backend;
 
 use App\Model\Girls;
-use App\Model\Nation;
+use App\Model\Area;
 use App\Model\Girlphotos;
 
 use Illuminate\Http\Request;
@@ -20,9 +20,9 @@ class GirlsController extends MyController
         if($request->isMethod('post')){
             $searchData['searchword'] = request()->input('searchword');
             $searchData['status'] = request()->input('status');
-            $result = Girls::select('girls.*','nation.nation','nation.flag')
-                ->leftJoin('nation',function ($join){
-                    $join->on('nation.id','=','girls.nation_id');
+            $result = Girls::select('girls.*','area.area_name')
+                ->leftJoin('area',function ($join){
+                    $join->on('area.id','=','girls.area_id');
                 });
             if(!empty($searchData['searchword']))
             {
@@ -38,9 +38,9 @@ class GirlsController extends MyController
             }
             $girlsArray = $result->orderBy('girls.id', 'desc')->paginate($this->backendPageNum);
         }else{
-            $girlsArray = Girls::select('girls.*','nation.nation','nation.flag')
-                ->leftJoin('nation',function ($join){
-                    $join->on('nation.id','=','girls.nation_id');
+            $girlsArray = Girls::select('girls.*','area.area_name')
+                ->leftJoin('area',function ($join){
+                    $join->on('area.id','=','girls.area_id');
                 })->where('girls.status','!=',9)
                 ->orderBy('girls.id', 'desc')->paginate($this->backendPageNum);
         }
@@ -71,8 +71,8 @@ class GirlsController extends MyController
             }
             echo json_encode($reData);
         }else{
-            $nationArray = Nation::select('id','nation')->orderBy('id','asc')->get()->toArray();
-            return view('backend.girladd',['nations' => $nationArray]);
+            $areaArray = Area::select('id','area_name')->orderBy('id','asc')->get()->toArray();
+            return view('backend.girladd',['areas' => $areaArray]);
         }
     }
 
@@ -96,8 +96,8 @@ class GirlsController extends MyController
 //            $serviceArray = explode(PHP_EOL,trim($serviceString));
 //            print_r($serviceArray);exit;
 
-            $nationArray = Nation::select('id','nation')->orderBy('id','asc')->get()->toArray();
-            return view('backend.girledit', ['girl' => $girlArray,'nations' => $nationArray]);
+            $areaArray = Area::select('id','area_name')->orderBy('id','asc')->get()->toArray();
+            return view('backend.girledit', ['girl' => $girlArray,'areas' => $areaArray]);
         }
 
     }

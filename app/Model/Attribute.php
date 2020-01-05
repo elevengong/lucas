@@ -10,5 +10,5 @@ class Attribute extends Model
     protected $primaryKey = 'id';
     public $timestamps = false;
 
-    protected $fillable = ['id','name','key','value'];
+    protected $fillable = ['id','name','key','value','base'];
 }

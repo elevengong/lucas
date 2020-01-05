@@ -76,7 +76,8 @@ class IndexController extends MyController
             $name = request()->input('name');
             $key = request()->input('key');
             $value = request()->input('value');
-            $result = Attribute::where('id',$id)->update(['name'=> $name, 'key'=> $key, 'value'=> $value]);
+            $base = request()->input('base');
+            $result = Attribute::where('id',$id)->update(['name'=> $name, 'key'=> $key, 'value'=> $value,'base'=>$base]);
             if($result)
             {
                 $reData['status'] = 1;
@@ -93,6 +94,13 @@ class IndexController extends MyController
     }
 
     public function delstatic($id){
+        //判断该属性是否基础属性，基础属性不可删除
+        $data = Attribute::find($id)->toArray();
+        if($data['id']==1)
+        {
+            $data = array('status' => 1, 'msg' => "基础属性不可删除");
+            return json_encode($data);
+        }
         $result = Attribute::destroy($id);
         if ($result) {
             $data = array('status' => 1, 'msg' => "删除成功");

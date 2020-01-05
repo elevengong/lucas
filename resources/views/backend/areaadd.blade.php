@@ -12,42 +12,35 @@
     <link href="<?php echo asset( "/resources/views/backend/static/h-ui.admin/css/style.css") ?>" rel="stylesheet" type="text/css" />
     <link href="<?php echo asset( "/resources/views/backend/static/Hui-iconfont/1.0.8/iconfont.css") ?>" rel="stylesheet" type="text/css" />
 
-    <title>添加分类</title>
-    <meta name="keywords" content="添加">
-    <meta name="description" content="添加分类">
+    <title>添加地区</title>
+    <meta name="keywords" content="添加地区">
+    <meta name="description" content="添加地区">
 </head>
 <body>
 <script type="text/javascript" src="<?php echo asset( "/resources/views/backend/js/jquery.min.1.9.1.js") ?>"></script>
 <script type="text/javascript" src="<?php echo asset( "/resources/views/backend/js/My97DatePicker/4.8/WdatePicker.js"); ?>"></script>
 <script type="text/javascript" src="<?php echo asset( "/resources/views/backend/js/layer/layer.js") ?>"></script>
 
-<script type="text/javascript" src="<?php echo asset( "/resources/views/backend/js/include/nation.js?ver=1.1"); ?>"></script>
+<script type="text/javascript" src="<?php echo asset( "/resources/views/backend/js/include/area.js?ver=1.1"); ?>"></script>
 <div id="frm_account" class="col-xs-12" style="text-align: center;">
     <form class="form form-horizontal" id="form1">
         {{csrf_field()}}
         <div class="col-xs-12 row cl">
-            <label class="form-label col-xs-3 col-sm-3">国家：</label>
+            <label class="form-label col-xs-3 col-sm-3">地区：</label>
             <div class="col-xs-9 col-sm-9">
-                <input type="text" class="input-text" value="{{$Nation['nation']}}" id="nation" name="nation" />
+                <input type="text" class="input-text" value="" id="area_name" name="area_name" />
             </div>
         </div>
 
         <div class="col-xs-12 row cl">
-            <label class="form-label col-xs-3 col-sm-3">国旗：</label>
+            <label class="form-label col-xs-3 col-sm-3">排序(数字越大排越前面)：</label>
             <div class="col-xs-9 col-sm-9">
-                <input type="button" value="上传图片" onclick="photo1.click()" style="float:left;margin-top:10px;" class="btn_mouseout"/>
-                <p><input type="file" id="photo1" name="photo1" onchange="upload(this);" style="display:none" /></p>
-                <div id="show" style="float:left;padding-left:7px;">
-                    @if($Nation['flag'] != '')
-                        <img id="img" src="{{$Nation['flag']}}" width="80">
-                    @endif
-                </div>
-                <input type="hidden" id="flag" name="flag" value="{{$Nation['flag']}}">
+                <input type="text" class="input-text" value="0" id="priority" name="priority" />
             </div>
         </div>
         <div class="col-xs-12 row cl" style="text-align: center;">
             <div class="formControls col-xs-12 col-sm-12">
-                <input type="button" onclick="nationeditprocess({{$Nation['id']}})" class="btn btn-primary" value="修改" id="btn_add_ok" />
+                <input type="button" onclick="areaaddprocess()" class="btn btn-primary" value="添加" id="btn_add_ok" />
             </div>
         </div>
 

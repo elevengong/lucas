@@ -4,11 +4,11 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Nation extends Model
+class Area extends Model
 {
-    protected $table = 'nation';
+    protected $table = 'area';
     protected $primaryKey = 'id';
     public $timestamps = '';
 
-    protected $fillable = ['nation','flag'];
+    protected $fillable = ['area_name','priority'];
 }
