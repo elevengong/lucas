@@ -11,17 +11,17 @@ function opennewgirl() {
 }
 
 function girladdprocess() {
-    var name  = $.trim( $('#name').val() );
+    var title  = $.trim( $('#title').val() );
     var cover = $.trim( $('#cover').val() );
+    var name  = $.trim( $('#name').val() );
     var area_id  = $.trim( $('#area_id').val() );
-    var intro  = $.trim( $('#intro').val() );
+    var price  = $.trim( $('#price').val() );
+    var mobile = $.trim( $('#mobile').val() );
     var service  = $.trim( $('#service').val() );
-    var videolist  = $.trim( $('#videolist').val() );
-    var status  = $.trim( $('#status').val() );
 
-    if(name == '')
+    if(title == '')
     {
-        layer.msg('名字不能为空');
+        layer.msg('标题不能为空');
         return false;
     }
     if(cover == '')
@@ -29,19 +29,29 @@ function girladdprocess() {
         layer.msg('封面不能为空');
         return false;
     }
+    if(name == '')
+    {
+        layer.msg('名字不能为空');
+        return false;
+    }
     if(area_id == '')
     {
         layer.msg('地区不能为空');
         return false;
     }
-    if(intro == '')
+    if(price == '')
     {
-        layer.msg('贵妃介绍不能为空');
+        layer.msg('价格不能为空');
         return false;
     }
-    if(status == '')
+    if(mobile == '')
     {
-        layer.msg('状态不能为空');
+        layer.msg('手机不能为空');
+        return false;
+    }
+    if(service == '')
+    {
+        layer.msg('服务不能为空');
         return false;
     }
 
@@ -83,17 +93,17 @@ function girledit(id) {
 }
 
 function girleditprocess(id) {
-    var name  = $.trim( $('#name').val() );
+    var title  = $.trim( $('#title').val() );
     var cover = $.trim( $('#cover').val() );
+    var name  = $.trim( $('#name').val() );
     var area_id  = $.trim( $('#area_id').val() );
-    var intro  = $.trim( $('#intro').val() );
+    var price  = $.trim( $('#price').val() );
+    var mobile = $.trim( $('#mobile').val() );
     var service  = $.trim( $('#service').val() );
-    var videolist  = $.trim( $('#videolist').val() );
-    var status  = $.trim( $('#status').val() );
 
-    if(name == '')
+    if(title == '')
     {
-        layer.msg('名字不能为空');
+        layer.msg('标题不能为空');
         return false;
     }
     if(cover == '')
@@ -101,19 +111,29 @@ function girleditprocess(id) {
         layer.msg('封面不能为空');
         return false;
     }
+    if(name == '')
+    {
+        layer.msg('名字不能为空');
+        return false;
+    }
     if(area_id == '')
     {
         layer.msg('地区不能为空');
         return false;
     }
-    if(intro == '')
+    if(price == '')
     {
-        layer.msg('贵妃介绍不能为空');
+        layer.msg('价格不能为空');
         return false;
     }
-    if(status == '')
+    if(mobile == '')
     {
-        layer.msg('状态不能为空');
+        layer.msg('手机不能为空');
+        return false;
+    }
+    if(service == '')
+    {
+        layer.msg('服务不能为空');
         return false;
     }
 

@@ -79,13 +79,13 @@
             </dd>
 
             <dt>
-                <i class="Hui-iconfont">&#xe616;</i> 贵妃管理
+                <i class="Hui-iconfont">&#xe616;</i> 妹子管理
                 <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
             </dt>
 
             <dd style="display: none">
                 <ul>
-                    <li><a data-href="{{url('/backend/girls/girllist')}}" href="javascript:void(0)" onclick="clicklink(this)" title="贵妃列表">贵妃列表</a></li>
+                    <li><a data-href="{{url('/backend/girls/girllist')}}" href="javascript:void(0)" onclick="clicklink(this)" title="妹子列表">妹子列表</a></li>
 
                 </ul>
             </dd>

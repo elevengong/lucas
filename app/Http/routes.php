@@ -18,16 +18,16 @@ Route::group(['middleware' => ['web']],function () {
     Route::get('/beauty/{id}.html','frontend\IndexController@beauty')->where(['id' => '[0-9]+']);
     Route::get('/contact','frontend\IndexController@contact');
 
+    //登陆注册
     Route::any('/login.html','frontend\IndexController@login');
-
     Route::any('/register.html','frontend\IndexController@register');
-
-
     Route::get('/user/logout','frontend\IndexController@logout');
 
+    //推荐入口
     Route::get('/agent/{agent_id}','frontend\IndexController@agententrance')->where(['agent_id' => '[0-9]+']);
 
-
+    //栏目
+    Route::get('/category/{id}.html','frontend\IndexController@category')->where(['id' => '[0-9]+']);
 
 
 

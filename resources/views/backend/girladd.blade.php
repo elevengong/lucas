@@ -21,14 +21,14 @@
 <script type="text/javascript" src="<?php echo asset( "/resources/views/backend/js/My97DatePicker/4.8/WdatePicker.js"); ?>"></script>
 <script type="text/javascript" src="<?php echo asset( "/resources/views/backend/js/layer/layer.js") ?>"></script>
 
-<script type="text/javascript" src="<?php echo asset( "/resources/views/backend/js/include/girls.js?ver=1.1"); ?>"></script>
+<script type="text/javascript" src="<?php echo asset( "/resources/views/backend/js/include/girls.js?ver=1.2"); ?>"></script>
 <div id="frm_account" class="col-xs-12" style="text-align: center;">
     <form class="form form-horizontal" id="form1">
         {{csrf_field()}}
         <div class="col-xs-12 row cl">
-            <label class="form-label col-xs-3 col-sm-3">名字：</label>
+            <label class="form-label col-xs-3 col-sm-3">标题：</label>
             <div class="col-xs-9 col-sm-9">
-                <input type="text" class="input-text" value="" id="name" name="name" />
+                <input type="text" class="input-text" value="" id="title" name="title" />
             </div>
         </div>
 
@@ -44,7 +44,56 @@
         </div>
 
         <div class="col-xs-12 row cl">
-            <label class="form-label col-xs-3 col-sm-3">地区：</label>
+            <label class="form-label col-xs-3 col-sm-3">名字：</label>
+            <div class="col-xs-9 col-sm-9">
+                <input type="text" class="input-text" value="" id="name" name="name" />
+            </div>
+        </div>
+
+        <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">年龄：</label>
+            <div class="col-xs-9 col-sm-9">
+                <input type="text" class="input-text" value="" id="age" name="age" />
+            </div>
+        </div>
+
+        <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">身高：</label>
+            <div class="col-xs-9 col-sm-9">
+                <input type="text" class="input-text" value="" id="height" name="height" />
+            </div>
+        </div>
+
+        <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">胸围：</label>
+            <div class="col-xs-9 col-sm-9">
+                <input type="text" class="input-text" value="" id="boobs" name="boobs" />
+            </div>
+        </div>
+
+        <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">体重：</label>
+            <div class="col-xs-9 col-sm-9">
+                <input type="text" class="input-text" value="" id="weight" name="weight" />
+            </div>
+        </div>
+
+        <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">Room：</label>
+            <div class="col-xs-9 col-sm-9">
+                <input type="text" class="input-text" value="" id="room" name="room" />
+            </div>
+        </div>
+
+        <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">area：</label>
+            <div class="col-xs-9 col-sm-9">
+                <input type="text" class="input-text" value="" id="area" name="area" />
+            </div>
+        </div>
+
+        <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">地点：</label>
             <div class="col-xs-9 col-sm-9">
                 <select name="area_id" style="float:left;" id="area_id">
                     @foreach($areas as $area)
@@ -55,16 +104,30 @@
         </div>
 
         <div class="col-xs-12 row cl">
-            <label class="form-label col-xs-3 col-sm-3">介绍：</label>
+            <label class="form-label col-xs-3 col-sm-3">价格：</label>
             <div class="col-xs-9 col-sm-9">
-                <textarea rows="10" cols="60" name="intro" id="intro" style="float: left;"></textarea>
+                <input type="text" class="input-text" value="" id="price" name="price" />
             </div>
         </div>
 
         <div class="col-xs-12 row cl">
-            <label class="form-label col-xs-3 col-sm-3">服务：</label>
+            <label class="form-label col-xs-3 col-sm-3">过夜价格：</label>
             <div class="col-xs-9 col-sm-9">
-                <textarea rows="10" cols="60" name="service" id="service" style="float: left;"></textarea>
+                <input type="text" class="input-text" value="" id="overnight" name="overnight" />
+            </div>
+        </div>
+
+        <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">电话：</label>
+            <div class="col-xs-9 col-sm-9">
+                <input type="text" class="input-text" value="" id="mobile" name="mobile" />
+            </div>
+        </div>
+
+        <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">微信：</label>
+            <div class="col-xs-9 col-sm-9">
+                <input type="text" class="input-text" value="" id="wechat" name="wechat" />
             </div>
         </div>
 
@@ -76,17 +139,44 @@
         </div>
 
         <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">服务列表：</label>
+            <div class="col-xs-9 col-sm-9">
+                <textarea rows="10" cols="60" name="service" id="service" style="float: left;"></textarea>
+            </div>
+        </div>
+
+        <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">是否有按摩：</label>
+            <div class="col-xs-9 col-sm-9">
+                <label style="float: left;width: 100px;"><input name="massage" type="radio" value="1" checked="checked"/>没有 </label>
+                <label style="float: left;"><input name="massage" type="radio" value="2" />有 </label>
+            </div>
+        </div>
+
+        <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">是否可以双飞：</label>
+            <div class="col-xs-9 col-sm-9">
+                <label  style="float: left;width: 100px;"><input name="threesome" type="radio" value="1" checked="checked"/>不可以 </label>
+                <label  style="float: left;"><input name="threesome" type="radio" value="2" />可以 </label>
+            </div>
+        </div>
+
+        <div class="col-xs-12 row cl">
             <label class="form-label col-xs-3 col-sm-3">状态：</label>
             <div class="col-xs-9 col-sm-9">
-                <select name="status" style="float:left;" id="status">
-                    <option value="0" selected="selected">有空</option>
-                    <option value="1">在上钟</option>
-                    <option value="2">休息</option>
-                    <option value="3">下架</option>
+                <select name="show" style="float:left;" id="status">
+                    <option value="1" selected="selected" >显示</option>
+                    <option value="2" >隐藏</option>
                 </select>
             </div>
         </div>
 
+        <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">Note：</label>
+            <div class="col-xs-9 col-sm-9">
+                <input type="text" class="input-text" value="" id="note" name="note" placeholder="Menses / 例假" />
+            </div>
+        </div>
 
 
         <div class="col-xs-12 row cl" style="text-align: center;">

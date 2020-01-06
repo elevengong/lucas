@@ -12,23 +12,23 @@
     <link href="<?php echo asset( "/resources/views/backend/static/h-ui.admin/css/style.css") ?>" rel="stylesheet" type="text/css" />
     <link href="<?php echo asset( "/resources/views/backend/static/Hui-iconfont/1.0.8/iconfont.css") ?>" rel="stylesheet" type="text/css" />
 
-    <title>添加分类</title>
-    <meta name="keywords" content="添加">
-    <meta name="description" content="添加分类">
+    <title>修改美女信息</title>
+    <meta name="keywords" content="修改美女信息">
+    <meta name="description" content="修改美女信息">
 </head>
 <body>
 <script type="text/javascript" src="<?php echo asset( "/resources/views/backend/js/jquery.min.1.9.1.js") ?>"></script>
 <script type="text/javascript" src="<?php echo asset( "/resources/views/backend/js/My97DatePicker/4.8/WdatePicker.js"); ?>"></script>
 <script type="text/javascript" src="<?php echo asset( "/resources/views/backend/js/layer/layer.js") ?>"></script>
 
-<script type="text/javascript" src="<?php echo asset( "/resources/views/backend/js/include/girls.js?ver=1.1"); ?>"></script>
+<script type="text/javascript" src="<?php echo asset( "/resources/views/backend/js/include/girls.js?ver=1.2"); ?>"></script>
 <div id="frm_account" class="col-xs-12" style="text-align: center;">
     <form class="form form-horizontal" id="form1">
         {{csrf_field()}}
         <div class="col-xs-12 row cl">
-            <label class="form-label col-xs-3 col-sm-3">名字：</label>
+            <label class="form-label col-xs-3 col-sm-3">标题：</label>
             <div class="col-xs-9 col-sm-9">
-                <input type="text" class="input-text" value="{{$girl['name']}}" id="name" name="name" />
+                <input type="text" class="input-text" value="{{$girl['title']}}" id="title" name="title" />
             </div>
         </div>
 
@@ -47,7 +47,57 @@
         </div>
 
         <div class="col-xs-12 row cl">
-            <label class="form-label col-xs-3 col-sm-3">地区：</label>
+            <label class="form-label col-xs-3 col-sm-3">名字：</label>
+            <div class="col-xs-9 col-sm-9">
+                <input type="text" class="input-text" value="{{$girl['name']}}" id="name" name="name" />
+            </div>
+        </div>
+
+        <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">年龄：</label>
+            <div class="col-xs-9 col-sm-9">
+                <input type="text" class="input-text" value="{{$girl['age']}}" id="age" name="age" />
+            </div>
+        </div>
+
+        <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">身高：</label>
+            <div class="col-xs-9 col-sm-9">
+                <input type="text" class="input-text" value="{{$girl['height']}}" id="height" name="height" />
+            </div>
+        </div>
+
+        <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">胸围：</label>
+            <div class="col-xs-9 col-sm-9">
+                <input type="text" class="input-text" value="{{$girl['boobs']}}" id="boobs" name="boobs" />
+            </div>
+        </div>
+
+        <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">体重：</label>
+            <div class="col-xs-9 col-sm-9">
+                <input type="text" class="input-text" value="{{$girl['weight']}}" id="weight" name="weight" />
+            </div>
+        </div>
+
+        <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">Room：</label>
+            <div class="col-xs-9 col-sm-9">
+                <input type="text" class="input-text" value="{{$girl['room']}}" id="room" name="room" />
+            </div>
+        </div>
+
+        <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">area：</label>
+            <div class="col-xs-9 col-sm-9">
+                <input type="text" class="input-text" value="{{$girl['area']}}" id="area" name="area" />
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">地点：</label>
             <div class="col-xs-9 col-sm-9">
                 <select name="area_id" style="float:left;" id="area_id">
                     @foreach($areas as $area)
@@ -58,16 +108,30 @@
         </div>
 
         <div class="col-xs-12 row cl">
-            <label class="form-label col-xs-3 col-sm-3">介绍：</label>
+            <label class="form-label col-xs-3 col-sm-3">价格：</label>
             <div class="col-xs-9 col-sm-9">
-                <textarea rows="10" cols="60" name="intro" id="intro" style="float: left;">{{$girl['intro']}}</textarea>
+                <input type="text" class="input-text" value="{{$girl['price']}}" id="price" name="price" />
             </div>
         </div>
 
         <div class="col-xs-12 row cl">
-            <label class="form-label col-xs-3 col-sm-3">服务：</label>
+            <label class="form-label col-xs-3 col-sm-3">过夜价格：</label>
             <div class="col-xs-9 col-sm-9">
-                <textarea rows="10" cols="60" name="service" id="service" style="float: left;">{{$girl['service']}}</textarea>
+                <input type="text" class="input-text" value="{{$girl['overnight']}}" id="overnight" name="overnight" />
+            </div>
+        </div>
+
+        <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">电话：</label>
+            <div class="col-xs-9 col-sm-9">
+                <input type="text" class="input-text" value="{{$girl['mobile']}}" id="mobile" name="mobile" />
+            </div>
+        </div>
+
+        <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">微信：</label>
+            <div class="col-xs-9 col-sm-9">
+                <input type="text" class="input-text" value="{{$girl['wechat']}}" id="wechat" name="wechat" />
             </div>
         </div>
 
@@ -79,14 +143,35 @@
         </div>
 
         <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">服务列表：</label>
+            <div class="col-xs-9 col-sm-9">
+                <textarea rows="10" cols="60" name="service" id="service" style="float: left;">{{$girl['service']}}</textarea>
+            </div>
+        </div>
+
+        <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">是否有按摩：</label>
+            <div class="col-xs-9 col-sm-9">
+                <label  style="float: left;width: 100px;"><input name="massage" type="radio" value="1" @if($girl['massage'] == 1) checked="checked" @endif/>没有 </label>
+                <label  style="float: left;"><input name="massage" type="radio" value="2" @if($girl['massage'] == 2) checked="checked" @endif/>有 </label>
+            </div>
+        </div>
+
+        <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">是否可以双飞：</label>
+            <div class="col-xs-9 col-sm-9">
+                <label  style="float: left;width: 100px;"><input name="threesome" type="radio" value="1" @if($girl['threesome'] == 1) checked="checked" @endif/>不可以 </label>
+                <label  style="float: left;"><input name="threesome" type="radio" value="2" @if($girl['threesome'] == 2) checked="checked" @endif/>可以 </label>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 row cl">
             <label class="form-label col-xs-3 col-sm-3">状态：</label>
             <div class="col-xs-9 col-sm-9">
-                <select name="status" style="float:left;" id="status">
-                    <option value="0" @if($girl['status'] == 0) selected="selected" @endif>有空</option>
-                    <option value="1" @if($girl['status'] == 1) selected="selected" @endif>在上钟</option>
-                    <option value="2" @if($girl['status'] == 2) selected="selected" @endif>休息</option>
-                    <option value="3" @if($girl['status'] == 3) selected="selected" @endif>下架</option>
-                    <option value="9" @if($girl['status'] == 9) selected="selected" @endif>已删除</option>
+                <select name="show" style="float:left;" id="status">
+                    <option value="1" @if($girl['show'] == 1) selected="selected" @endif>显示</option>
+                    <option value="2" @if($girl['show'] == 2) selected="selected" @endif>隐藏</option>
                 </select>
             </div>
         </div>

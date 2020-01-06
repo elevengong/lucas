@@ -13,7 +13,7 @@
 <div class="header">
     <div class="logo wrap">
         <h1><a href="/">&nbsp;</a></h1>
-        <div class="title">{{$base['title']}}</div>
+        <div class="title">这里要改</div>
 
     </div>
     <div class="search wrap">
@@ -47,12 +47,12 @@
     <div class="nav wrap">
         <ul>
             <li><a href="/" ><font color="black">MainPage/主页</font></a></li>
-            <li><a href="index.php?city=2" ><font color="black">Central/中部</font></a></li>
-            <li><a href="index.php?city=3" ><font color="black">West/西部</font></a></li>
-            <li><a href="index.php?city=4" ><font color="black">North/北部</font></a></li>
-            <li><a href="index.php?city=1" ><font color="black">East/东部</font></a></li>
-            <li><a href="index.php?city=6" ><font color="black">Hotel/酒店</font></a></li>
-            <li><a href="index.php?type=2" ><font color="black">Massage/按摩</font></a></li>
+            @foreach($category as $ca)
+            <li><a href="/category/{{$ca['id']}}.html" ><font color="black">{{$ca['area_name']}}</font></a></li>
+            @endforeach
+            <li><a href="/category/1000.html"><font color="black">Massage/按摩</font></a></li>
+            <li><a href="/category/1001.html"><font color="black">Video/视频</font></a></li>
+
         </ul>
     </div>
 

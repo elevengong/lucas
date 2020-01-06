@@ -3,43 +3,81 @@
 <div class="showbox wrap">
     <div class="i-title"><h1>Girl Details/女孩详细</h1></div>
     <div class="fix mb20 pt15">
-        <div class="imgbox"><img src="http://ttvip7.com/upload/images/191201/15752060588185.jpg" alt="服务双飞王! 热情似火! 无毛小鲍鱼! 口活一级棒!1"></div>
+        <div class="imgbox"><img src="{{$girl['cover']}}" alt="{{$girl['title']}}"></div>
         <div class="about">
-            <div class="girl-title">服务双飞王! 热情似火! 无毛小鲍鱼! 口活一级棒!</div>
-            <p>Name 姓名 : N+88 Su Ya Qin（苏雅芩）</p>
-            <p>Age 年龄 : 24 Years Old</p>
-            <p>Height 身高 : 158cm</p>
-            <p>Boobs 胸围 : 34C</p>
-            <p>Weight 体重 : 45</p>
-            <p>Room & CD Included 包房包套</p>
-            <p><label>Area 地区：</label>Hotel（酒店）</p>
-            <p><label>Location 地点：</label>Central Area 中部地区</p>
-            <p><label>Damage 价格：</label><big>$360/1/1Shots(Tarma/双飞)</big></p>
-            <p><label>OverNight 包夜：</label><big>$1400</big></p>			<p><label>Mobile 电话：</label><big>82868133</big></p>				        			<p style="color:red;">Please quote seen from TT! 请说TT看见的！</p>
+            <div class="girl-title">{{$girl['title']}}</div>
+            @if(!empty($girl['name']))<p>Name 姓名 : {{$girl['name']}}</p>@endif
+            @if(!empty($girl['age']))<p>Age 年龄 : {{$girl['age']}}</p>@endif
+            @if(!empty($girl['height']))<p>Height 身高 : {{$girl['height']}}</p>@endif
+            @if(!empty($girl['boobs']))<p>Boobs 胸围 : {{$girl['boobs']}}</p>@endif
+            @if(!empty($girl['weight']))<p>Weight 体重 : {{$girl['weight']}}</p>@endif
+            @if(!empty($girl['room']))<p>Room {{$girl['room']}}</p>@endif
+            @if(!empty($girl['area']))<p><label>Area 地区：</label>{{$girl['area']}}</p>@endif
+            @if(!empty($girl['area_name']))<p><label>Location 地点：</label>{{$girl['area_name']}}</p>@endif
+            @if(!empty($girl['price']))<p><label>Price 价格：</label><big>{{$girl['price']}}</big></p>@endif
+            @if(!empty($girl['overnight']))<p><label>OverNight 包夜：</label><big>{{$girl['overnight']}}</big></p>@endif
+            @if(!empty($girl['mobile']))<p><label>Mobile 电话：</label><big>{{$girl['mobile']}}</big></p>@endif
+
+            @if(!empty($girl['wechat']))
+            <p><label>WeChat 微信：</label><big>{{$girl['wechat']}}</big>
+                <button type="button" class="btn copyWeixin" data-clipboard-text="{{$girl['wechat']}}" style="width:150px;height:30px;font-size:14px;border-radius:3px;">点击复制微信号</button>
+            </p>
+            @endif
+
+            <p style="color:red;">Please quote seen from {{$base['web_nickname']}}! 请说{{$base['web_nickname']}}看见的！</p>
             <div class="contact">
-                <a href="tel:82868133" class="tel">Click to CALL</a>
-                <a href="sms:82868133?&body=你好美女，我在【ttvip7.com TT网】看到你的，请问你什么时候有空，可以约吗？" class="sms">Click to SMS</a>
+                <a href="tel:{{$girl['mobile']}}" class="tel">Click to CALL</a>
+                <a href="sms:{{$girl['mobile']}}?&body=你好美女，我在【{{$base['domain']}} {{$base['web_nickname']}}网】看到你的，请问你什么时候有空，可以约吗？" class="sms">Click to SMS</a>
             </div>
         </div>
     </div>
+
+    @if(!empty($videosArray))
     <div class="video mb20">
         <div class="i-title"><h1>Video/视频</h1></div>
         <div style="text-align:center;">
-            <video src="/upload/video/191201/15752060801507.mp4" controls="controls" style="height:400px;width:550px;background-color:#000;"></video><video src="/upload/video/191203/15753196649195.mp4" controls="controls" style="margin-left:40px; height:400px;width:550px;background-color:#000;"></video>		</div>
+            @foreach($videosArray as $video)
+            <video src="{{$video}}" controls="controls" style="height:400px;width:550px;background-color:#000;"></video>
+            @endforeach
+        </div>
     </div>
+    @endif
+
+    @if(!empty($serviceArray))
     <div class="mb20">
         <div class="i-title"><h1>Service/服务</h1></div>
-        <ul style="font-size:18px;line-height:180%;color:black;padding:0 20px;">
-            <li style='width: 100%;'><p style="padding-left:  20%; width:400px; float:left; overflow: hidden;">1:Shower together♥鸳鸯浴<p style="width:400px; float:left; text-align: left; overflow: hidden;">2:Shower BJ♥浴中萧</p></></li><li style='width: 100%;'><p style="padding-left:  20%; width:400px; float:left; overflow: hidden;">3:Simple Massage♥简单按摩<p style="width:400px; float:left; text-align: left; overflow: hidden;">4:Frenching♥舌吻</p></></li><li style='width: 100%;'><p style="padding-left:  20%; width:400px; float:left; overflow: hidden;">5:BBBJ♥无套口交<p style="width:400px; float:left; text-align: left; overflow: hidden;">6:CIM♥无套口爆</p></></li><li style='width: 100%;'><p style="padding-left:  20%; width:400px; float:left; overflow: hidden;">7:Roam♥全身漫游<p style="width:400px; float:left; text-align: left; overflow: hidden;">8:COB♥射身</p></></li><li style='width: 100%;'><p style="padding-left:  20%; width:400px; float:left; overflow: hidden;">9:69Type♥69式<p style="width:400px; float:left; text-align: left; overflow: hidden;">10:Boobs Gliding♥性感胸推</p></></li><li style='width: 100%;'><p style="padding-left:  20%; width:400px; float:left; overflow: hidden;">11:Lick Nipples♥舔奶头<p style="width:400px; float:left; text-align: left; overflow: hidden;">12:Painting♥舔鲍鱼 </p></></li><li style='width: 100%;'><p style="padding-left:  20%; width:400px; float:left; overflow: hidden;">13:Boobs Fuck♥乳交<p style="width:400px; float:left; text-align: left; overflow: hidden;">14:Butt Gliding♥性感臀推</p></></li><li style='width: 100%;'><p style="padding-left:  20%; width:400px; float:left; overflow: hidden;">15:FJ♥有套做爱<p style="width:400px; float:left; text-align: left; overflow: hidden;">16:All Natural Boobs♥全天然胸</p></></li><li style='width: 100%;'><p style="padding-left:  20%; width:400px; float:left; overflow: hidden;">17:Stockings Temptation♥丝袜诱惑<p style="width:400px; float:left; text-align: left; overflow: hidden;">18:Uniform seduction♥制服诱惑</p></></li><li style='width: 100%;'><p style="padding-left:  20%; width:400px; float:left; overflow: hidden;">19:Sex Toy♥性玩具<p style="width:400px; float:left; text-align: left; overflow: hidden;">20:No Indians♥不接印度</p></></li><li style='width: 100%;'><p style="padding-left:  20%; width:400px; float:left; overflow: hidden;">21:No Caucasian♥不接洋人<p style="width:400px; float:left; text-align: left; overflow: hidden;">22:Tarma♥特色双飞</p></></li><li style='width: 100%;'><p style="padding-left:  20%; width:400px; float:left; overflow: hidden;">23:HJ♥打飞机</li>        </ul>
+        <ul class="servicelist">
+            @foreach($serviceArray as $service)
+            <li>
+                <p>{{$service}}</p>
+            </li>
+            @endforeach
+        </ul>
     </div>
+    @endif
+
+    @if(!empty($girl['note']))
     <div class="mb20">
-        <div class="i-title"><h1>Characteristic Service/特色服务</h1></div>
-        <div style="font-size:18px;line-height:180%;color:black;padding:0 10px;"><p><span style="font-family: arial, helvetica, sans-serif; font-size: 20px;">Tarma / 双飞<br/></span></p><p><span style="font-family: arial, helvetica, sans-serif; font-size: 20px;">N3388 Su Keke（苏可可）<br/><br/><span style="font-family: arial, helvetica, sans-serif; font-size: 20px; background-color: rgb(255, 255, 255);"></span><span style="font-family: arial, helvetica, sans-serif; font-size: 20px; background-color: rgb(255, 255, 255);">You may change condom and switch in between both girls for FJ</span><br style="font-family: arial, helvetica, sans-serif; font-size: 20px; white-space: normal;"/><span style="font-family: arial, helvetica, sans-serif; font-size: 20px; background-color: rgb(255, 255, 255);">你可以换套子轮流换着啪啪两位妹子</span><span style="font-family: arial, helvetica, sans-serif; font-size: 20px; background-color: rgb(255, 255, 255);"></span></span></p></div>
+        <div class="i-title"><h1>Notes/笔记</h1></div>
+        <div style="font-size:18px;line-height:180%;color:black;padding:0 10px;"><p>{{$girl['note']}}</p></div>
     </div>
+    @endif
 
     <div class="more-pics">
-        <div class="my-gallery fix"><figure><a data-size="1000x1332" href="http://ttvip7.com/upload/images/191201/15752060679006.jpg"><img src="http://ttvip7.com/upload/images/191201/15752060679006.jpg"></a></figure><figure><a data-size="1000x1332" href="http://ttvip7.com/upload/images/191201/15752060673877.jpg"><img src="http://ttvip7.com/upload/images/191201/15752060673877.jpg"></a></figure><figure><a data-size="1000x1974" href="http://ttvip7.com/upload/images/191201/15752060686696.jpg"><img src="http://ttvip7.com/upload/images/191201/15752060686696.jpg"></a></figure><figure><a data-size="1000x1908" href="http://ttvip7.com/upload/images/191201/15752060708740.jpg"><img src="http://ttvip7.com/upload/images/191201/15752060708740.jpg"></a></figure><figure><a data-size="1000x1852" href="http://ttvip7.com/upload/images/191201/15752060705430.jpg"><img src="http://ttvip7.com/upload/images/191201/15752060705430.jpg"></a></figure><figure><a data-size="1000x1332" href="http://ttvip7.com/upload/images/191201/15752060739446.jpg"><img src="http://ttvip7.com/upload/images/191201/15752060739446.jpg"></a></figure><figure><a data-size="1000x1776" href="http://ttvip7.com/upload/images/191201/15752060746352.jpg"><img src="http://ttvip7.com/upload/images/191201/15752060746352.jpg"></a></figure><figure><a data-size="1000x1850" href="http://ttvip7.com/upload/images/191201/15752060742805.jpg"><img src="http://ttvip7.com/upload/images/191201/15752060742805.jpg"></a></figure><figure><a data-size="1000x1896" href="http://ttvip7.com/upload/images/191201/15752060758743.jpg"><img src="http://ttvip7.com/upload/images/191201/15752060758743.jpg"></a></figure><figure><a data-size="1000x1332" href="http://ttvip7.com/upload/images/191201/15752060759968.jpg"><img src="http://ttvip7.com/upload/images/191201/15752060759968.jpg"></a></figure></div>
+        <div class="my-gallery fix">
+            @foreach($photos as $photo)
+            <figure>
+                <a data-size="1000x1332" href="{{$photo['photo']}}">
+                    <img src="{{$photo['photo']}}">
+                </a>
+            </figure>
+            @endforeach
+        </div>
     </div>
+
+
+
+
     <div class="comment">
         <div class="i-title"><h1>Comment/留言评论</h1></div>
         <div class="comment-list">

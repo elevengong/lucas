@@ -106,6 +106,7 @@ button {
 
 .mb20 {
     margin-bottom: 20px;
+    clear: both;
 }
 
 .mb30 {
@@ -567,16 +568,16 @@ button {
 }
 
 .contact a.tel {
-    background-image: url(/static/home/images/mtelb.png);
+    background-image: url(../images/mtelb.png);
     margin-right: 50px;
 }
 
 .contact a.sms {
-    background-image: url(/static/home/images/msmsb.png);
+    background-image: url(../images/msmsb.png);
 }
 
 .contact a.whats {
-    background-image: url(/static/home/images/mwhats.png);
+    background-image: url(../images/mwhats.png);
     margin-right: 50px;
     background-position: 180px center;
 }
@@ -840,4 +841,12 @@ button {
 .memberbox a {
     color: #333;
     text-decoration: none;
+}
+
+.mb20 .servicelist {
+    font-size:18px;line-height:180%;color:black;padding:0 20px;
+}
+
+.mb20 ul li p {
+    width:45%; float:left; overflow: hidden;
 }

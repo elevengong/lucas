@@ -9,13 +9,11 @@
                     <form id="frm_admin" action="/backend/girls/girllist" method="post" >
                         {{csrf_field()}}
                         <input type="text" class="input-text" style="width:250px" placeholder="输入名字" id="seach_uname" name="searchword" value="{{isset($searchData['searchword'])?$searchData['searchword']:''}}">
-                        <select name="status"  class="input-text" style="width:100px">
-                            <option value="" @if(!isset($searchData['status']) or $searchData['status']=='')selected="selected"@endif>Available</option>
-                            <option value="0" @if(isset($searchData['status']) and $searchData['status']=='0')selected="selected"@endif>有空</option>
-                            <option value="1" @if(isset($searchData['status']) and $searchData['status']=='1')selected="selected"@endif>在上钟</option>
-                            <option value="2" @if(isset($searchData['status']) and $searchData['status']=='2')selected="selected"@endif>休息</option>
-                            <option value="3" @if(isset($searchData['status']) and $searchData['status']=='3')selected="selected"@endif>下架</option>
-                            <option value="9" @if(isset($searchData['status']) and $searchData['status']=='9')selected="selected"@endif>已删除</option>
+                        <select name="area_id"  class="input-text" style="width:100px">
+                            <option value="0">全部</option>
+                            @foreach($areas as $area)
+                                <option value="{{$area['id']}}" @if(isset($searchData['area_id']) and $searchData['area_id']==$area['id'])selected="selected"@endif>{{$area['area_name']}}</option>
+                            @endforeach
                         </select>
                         <button type="submit" class="btn btn-success radius" id="btn_seach" name="btn_seach">
                             <i class="Hui-iconfont">&#xe665;</i> 搜
@@ -26,7 +24,7 @@
                 <div class="cl pd-5 bg-1 bk-gray mt-20">
                 <span class="l">
                     <a href="javascript:;" id="btn_add_category" class="btn btn-primary radius" onclick="opennewgirl();">
-                        <i class="Hui-iconfont">&#xe600;</i> 添加贵妃
+                        <i class="Hui-iconfont">&#xe600;</i> 添加美女
                     </a>
                 </span>
                 </div>
@@ -35,16 +33,25 @@
                     <table class="table table-border table-bordered table-hover table-bg table-sort">
                         <thead>
                         <tr class="text-c">
-                            <th width="20">ID</th>
-                            <th width="50">名字</th>
+                            <th width="40">ID</th>
+                            <th width="50">标题</th>
                             <th width="60">封面</th>
-                            <th width="50">地区</th>
-                            <th width="80">介绍</th>
-                            <th width="80">服务</th>
-                            <th width="80">视频地址</th>
+                            <th width="50">名字</th>
+                            <th width="80">年龄</th>
+                            <th width="80">身高</th>
+                            <th width="80">胸围</th>
+                            <th width="80">体重</th>
+                            <th width="80">Room</th>
+                            <th width="80">Area</th>
+                            <th width="80">地点</th>
+                            <th width="80">价格</th>
+                            <th width="80">电话</th>
+                            <th width="80">微信</th>
+                            <th width="80">状态</th>
+                            <th width="80">Note</th>
+                            <th width="80">视频列表</th>
+                            <th width="80">服务列表</th>
                             <th width="50">浏览次数</th>
-                            <th width="50">状态</th>
-                            <th width="50">更新时间</th>
                             <th width="50">入库时间</th>
                             <th width="50">操作</th>
                         </tr>
@@ -54,15 +61,24 @@
                         @foreach($datas as $data)
                             <tr class="text-c">
                                 <td>{{$data['id']}}</td>
-                                <td><a style="color: green;" href="/backend/girls/girlphotolist/{{$data['id']}}">{{$data['name']}}</a></td>
+                                <td><a style="color: green;" href="/backend/girls/girlphotolist/{{$data['id']}}">{{$data['title']}}</a></td>
                                 <td><a href="{{$data['cover']}}" target="_blank"><img src="{{$data['cover']}}" style="width:50px;" /></a></td>
+                                <td>{{$data['name']}}</td>
+                                <td>{{$data['age']}}</td>
+                                <td>{{$data['height']}}</td>
+                                <td>{{$data['boobs']}}</td>
+                                <td>{{$data['weight']}}</td>
+                                <td>{{$data['room']}}</td>
+                                <td>{{$data['area']}}</td>
                                 <td>{{$data['area_name']}}</td>
-                                <td>{{$data['intro']}}</td>
-                                <td>{{$data['service']}}</td>
+                                <td>{{$data['price']}}</td>
+                                <td>{{$data['mobile']}}</td>
+                                <td>{{$data['wechat']}}</td>
+                                <td>{{$data['show']==1?'显示':'隐藏'}}</td>
+                                <td>{{$data['note']}}</td>
                                 <td>{{$data['videolist']}}</td>
+                                <td>{{$data['service']}}</td>
                                 <td>{{$data['views']}}</td>
-                                <td>{{$status[$data['status']]}}</td>
-                                <td>{{$data['updated_at']}}</td>
                                 <td>{{$data['created_at']}}</td>
                                 <td class="td-manage">
                                     <a title="编辑" href="javascript:girledit({{$data['id']}})" class="ml-5"

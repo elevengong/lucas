@@ -6,6 +6,7 @@ use App\Model\Girls;
 use App\Model\Girlphotos;
 use App\Model\Attribute;
 use App\Model\Members;
+use App\Model\Area;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\MyController;
@@ -17,27 +18,29 @@ class IndexController extends MyController{
 
     private $attribute;
     private $base;
+    private $category;
 
     public function __construct()
     {
 //        date_default_timezone_set('Asia/Shanghai');
         $this->attribute = Attribute::orderBy('id','asc')->get()->toArray();
-//        print_r($this->attribute);exit;
 
         foreach ($this->attribute as  $item)
         {
             $this->base[$item['key']] = $item['value'];
         }
 
+        //栏目
+        $this->category = Area::orderBy('priority','desc')->get()->toArray();
+
     }
 
-    public function index(Request $request){
-        $girls = Girls::select('girls.id','girls.cover','girls.name','area.area_name')
-            ->leftJoin('area',function ($join){
-                $join->on('area.id','=','girls.area_id');
-            })->where('girls.status','!=',9)->orderBy('girls.id', 'desc')->get()->toArray();
+    public function index(){
+        $girls = Girls::select('girls.id','girls.cover','girls.name','girls.height','girls.videolist','girls.boobs','girls.price','girls.massage','girls.threesome','girls.created_at')
+            ->where('girls.show',1)->orderBy('girls.id', 'desc')->get()->toArray();
 
-        return view('frontend.index',['girls' => $girls,'base' => $this->base])->with('username',session('username'))->with('coin',session('coin'));
+        return view('frontend.index',['girls' => $girls,'base' => $this->base,'category' => $this->category])->with('username',session('username'))->with('coin',session('coin'));
+
     }
 
 
@@ -51,7 +54,9 @@ class IndexController extends MyController{
         {
             return redirect("/");
         }
-        $introArray = explode(PHP_EOL,trim($girl[0]['intro']));
+
+        $this->base['title'] = $girl[0]['title'].' - '.$this->base['title'];
+
         $service = trim($girl[0]['service']);
         if(empty($service))
         {
@@ -66,26 +71,9 @@ class IndexController extends MyController{
         }else{
             $videosArray = explode(PHP_EOL,$videos);
         }
-
         $photos = Girlphotos::where('g_id',$id)->get()->toArray();
-
-        //获取当前的页的上一个和一下
-        $preData = Girls::select('girls.id','girls.name','girls.cover','area.area_name')
-            ->leftJoin('area',function ($join){
-                $join->on('area.id','=','girls.area_id');
-            })->where('girls.id','<',$id)->where('girls.status','!=',9)->orderBy('id','desc')->get(1)->toArray();
-
-        $nextData = Girls::select('girls.id','girls.name','girls.cover','area.area_name')
-            ->leftJoin('area',function ($join){
-                $join->on('area.id','=','girls.area_id');
-            })->where('girls.id','>',$id)->where('girls.status','!=',9)->orderBy('id','asc')->get(1)->toArray();
-
-
-
         return view('frontend.beautyview',
-            ['girl'=> $girl[0],'introArray' => $introArray,
-                'serviceArray' => $serviceArray,'photos' => $photos,'videosArray' => $videosArray,'attribute' => $this->attribute,
-                'preData' => $preData, 'nextData' => $nextData,'base'=>$this->base]
+            ['girl'=> $girl[0],'serviceArray' => $serviceArray,'photos' => $photos,'videosArray' => $videosArray,'attribute' => $this->attribute,'base'=>$this->base,'category'=>$this->category]
         );
     }
 
@@ -128,7 +116,7 @@ class IndexController extends MyController{
             if(empty(session('username')))
             {
 
-                return view('frontend.login',['base' => $this->base]);
+                return view('frontend.login',['base' => $this->base,'category'=>$this->category]);
             }else{
                 return redirect('/');
             }
@@ -194,7 +182,7 @@ class IndexController extends MyController{
                 }else{
                     $agentId = session('agent');
                 }
-                return view('frontend.register',['base' => $this->base])->with('agentId', $agentId);
+                return view('frontend.register',['base' => $this->base,'category'=>$this->category])->with('agentId', $agentId);
             }else{
                 return redirect('/');
             }
@@ -214,5 +202,24 @@ class IndexController extends MyController{
     public function agententrance(Request $request,$agent_id){
         session(['agent'=>$agent_id]);
         return redirect('/');
+    }
+
+    //栏目
+    public function category($id){
+        $girls = array();
+        if($id != 1000 and $id != 1001)
+        {
+            $girls = Girls::select('girls.id','girls.cover','girls.name','girls.height','girls.videolist','girls.boobs','girls.price','girls.massage','girls.threesome','girls.created_at')
+                ->where('area_id',$id)->where('girls.show',1)->orderBy('girls.id', 'desc')->get()->toArray();
+
+        }elseif ($id == 1000){
+            $girls = Girls::select('girls.id','girls.cover','girls.name','girls.height','girls.videolist','girls.boobs','girls.price','girls.massage','girls.threesome','girls.created_at')
+                ->where('girls.massage',2)->where('girls.show',1)->orderBy('girls.id', 'desc')->get()->toArray();
+        }elseif($id == 1001){
+            $girls = Girls::select('girls.id','girls.cover','girls.name','girls.height','girls.videolist','girls.boobs','girls.price','girls.massage','girls.threesome','girls.created_at')
+                ->where('girls.videolist','!=','')->where('girls.show',1)->orderBy('girls.id', 'desc')->get()->toArray();
+        }
+        return view('frontend.index',['girls' => $girls,'base' => $this->base,'category' => $this->category])->with('username',session('username'))->with('coin',session('coin'));
+
     }
 }

@@ -16,10 +16,11 @@ class GirlsController extends MyController
 
     public function girllist(Request $request){
         $searchData = array();
+        $areas = Area::orderBy('id','asc')->get()->toArray();
 
         if($request->isMethod('post')){
             $searchData['searchword'] = request()->input('searchword');
-            $searchData['status'] = request()->input('status');
+            $searchData['area_id'] = request()->input('area_id');
             $result = Girls::select('girls.*','area.area_name')
                 ->leftJoin('area',function ($join){
                     $join->on('area.id','=','girls.area_id');
@@ -28,30 +29,20 @@ class GirlsController extends MyController
             {
                 $result->where('girls.name','like','%'.$searchData['searchword'].'%');
             }
-            if($searchData['status']!='')
+            if($searchData['area_id'] != 0)
             {
-                $result->where('girls.status',$searchData['status']);
+                $result->where('area_id',$searchData['area_id']);
             }
-            if($searchData['status']=='')
-            {
-                $result->where('girls.status','!=',9);
-            }
+
             $girlsArray = $result->orderBy('girls.id', 'desc')->paginate($this->backendPageNum);
         }else{
             $girlsArray = Girls::select('girls.*','area.area_name')
                 ->leftJoin('area',function ($join){
                     $join->on('area.id','=','girls.area_id');
-                })->where('girls.status','!=',9)
-                ->orderBy('girls.id', 'desc')->paginate($this->backendPageNum);
+                })->orderBy('girls.id', 'desc')->paginate($this->backendPageNum);
         }
-        $statusArray = array(
-            '0' => '有空',
-            '1' => '在上钟',
-            '2' => '休息中',
-            '3' => '下架',
-            '9' => '已删除'
-        );
-        return view('backend.girllist', ['datas' => $girlsArray,'status' => $statusArray,'searchData' => $searchData])->with('admin', session('admin'));
+
+        return view('backend.girllist', ['datas' => $girlsArray,'searchData' => $searchData,'areas' => $areas])->with('admin', session('admin'));
 
     }
 
