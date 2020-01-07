@@ -29,6 +29,10 @@ a:hover {
     color: #FF0000;
 }
 
+h1 a:hover{
+    color: wheat;
+}
+
 ins {
     display: none;
 }
@@ -151,7 +155,8 @@ button {
     height: 145px;
     clear: both;
     /*background: url(../images/head_r_bg.png?v0803) no-repeat 220px 40px;*/
-    background-color: #000000;
+    /*background-color: #000000;*/
+    background: url(../images/banner.png) no-repeat;
 }
 
 .header .logo h1 {
@@ -162,18 +167,12 @@ button {
 .header .logo h1 a {
     display: block;
     height: 130px;
-    text-indent: -9999px;
+    line-height:125px;
+    /*text-indent: -9999px;*/
+    /*text-indent: 40px;*/
     background: url(../images/logo.png?v1) no-repeat left center;
-}
-
-.header .logo .title {
+    font-size: 65px;
     text-align: center;
-    padding-top: 15px;
-    padding-right: 145px;
-    font-weight: bold;
-    color: #FFFFff;
-    font-size: 85px;
-    font-family: "Verdanan", "Trebuchet MS", "幼圆", "微软雅黑", "宋体";
 }
 
 .header .logo .subscribe {
@@ -850,3 +849,111 @@ button {
 .mb20 ul li p {
     width:45%; float:left; overflow: hidden;
 }
+
+#main_message {
+    margin-top: 20px;
+}
+.bm {
+    background: #FFF;
+}
+.bm .bm_h {
+    padding: 0 10px;
+    height: 31px;
+    border-top: 1px solid #FFF;
+    line-height: 31px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.bm .bm_h .y {
+    float: right;
+}
+.bm .bm_h .y a {
+    color: #FF8382;
+}
+.bm .bm_h .xs2 {
+    font-size: 14px !important;
+}
+.m_content {
+    padding-bottom: 50px;
+}
+.m1100 {
+    width: 1160px;
+    margin: 30px auto;
+}
+.loginform {
+    border: 1px solid #eee;
+}
+.loginform {
+    margin-bottom: 30px;
+}
+.loginform {
+    text-align: center;
+}
+.loginHint_wrapper {
+    padding: 23px 27px 12px;
+}
+.loginHint_wrapper h1 {
+    margin-bottom: 13px;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+.loginHint_wrapper p.bold {
+    color: #333;
+    font-weight: bold;
+}
+.loginHint_wrapper p {
+    line-height: 1.8em;
+    font-size: 13px;
+}
+.loginHint_wrapper p.normal {
+    color: #616161;
+}
+.loginform .input_field, .input_form .recaptcha-wrap {
+    position: relative;
+    margin: 20px auto;
+    width: 345px;
+}
+.loginform .input_field .input_fieldTitle {
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 13px;
+}
+.loginform .input_fieldTitle {
+    float: left;
+}
+.loginform {
+    text-align: center;
+}
+.loginform input[type="text"], .loginform input[type="password"], .loginform input[type="email"] {
+    border-bottom: 1px solid #E3E3E3 !important;
+    border: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+.loginform .input_field input {
+    width: 100%;
+    height: 45px;
+    color: #333;
+    font-size: 15px;
+}
+#btn_login, #btn_clear, #btn_registered {
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    font-size: 15px;
+    letter-spacing: 1px;
+    background-color: #DD4343;
+    border-radius: 5px;
+    border: 0px;
+}
+.form-horizontal {
+    margin-bottom: 20px;
+}
+input[type="text"], input[type="password"], textarea {
+    outline-style: none;
+    -webkit-appearance: none;
+}
+
+

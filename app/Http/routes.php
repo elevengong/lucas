@@ -16,7 +16,6 @@ Route::group(['middleware' => ['web']],function () {
  //---------------------前端------------------------------------------------
     Route::get('/','frontend\IndexController@index');
     Route::get('/beauty/{id}.html','frontend\IndexController@beauty')->where(['id' => '[0-9]+']);
-    Route::get('/contact','frontend\IndexController@contact');
 
     //登陆注册
     Route::any('/login.html','frontend\IndexController@login');
@@ -29,6 +28,11 @@ Route::group(['middleware' => ['web']],function () {
     //栏目
     Route::get('/category/{id}.html','frontend\IndexController@category')->where(['id' => '[0-9]+']);
 
+    //搜索
+    Route::any('/search.html','frontend\IndexController@search');
+
+    //评论
+    Route::post('/reply','frontend\IndexController@reply');
 
 
     //---------------------后台------------------------
@@ -55,7 +59,7 @@ Route::group(['middleware' => ['web','admin.login']],function () {
     Route::any('/backend/area/areaadd','backend\AreaController@areaadd');
     Route::delete('/backend/area/delete/{id}','backend\AreaController@delete')->where(['id' => '[0-9]+']);
 
-    //贵妃管理
+    //妹子管理
     Route::any('/backend/girls/girllist','backend\GirlsController@girllist');
     Route::any('/backend/girls/girladd','backend\GirlsController@girladd');
     Route::any('/backend/girls/girledit/{id}','backend\GirlsController@girledit')->where(['id' => '[0-9]+']);
@@ -65,6 +69,10 @@ Route::group(['middleware' => ['web','admin.login']],function () {
     Route::any('/backend/girls/girlphotoadd/{id}','backend\GirlsController@girlphotoadd')->where(['id' => '[0-9]+']);
 
     Route::any('/backend/girls/webuploader/{id}','backend\GirlsController@webuploader')->where(['id' => '[0-9]+']);
+
+    //评论管理
+    Route::any('/backend/comments/lists','backend\CommentController@lists');
+    Route::any('/backend/comments/batchsend/{status}','backend\CommentController@batchsend')->where(['status' => '[0-9]+']);
 
 
     //用户管理

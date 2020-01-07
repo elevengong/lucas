@@ -79,14 +79,14 @@
             </dd>
 
             <dt>
-                <i class="Hui-iconfont">&#xe616;</i> 妹子管理
+                <i class="Hui-iconfont">&#xe616;</i> 内容管理
                 <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
             </dt>
 
             <dd style="display: none">
                 <ul>
                     <li><a data-href="{{url('/backend/girls/girllist')}}" href="javascript:void(0)" onclick="clicklink(this)" title="妹子列表">妹子列表</a></li>
-
+                    <li><a data-href="{{url('/backend/comments/lists')}}" href="javascript:void(0)" onclick="clicklink(this)" title="评论列表">评论列表</a></li>
                 </ul>
             </dd>
 

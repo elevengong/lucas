@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2020-01-06 18:27:18
+Date: 2020-01-07 19:22:59
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -34,7 +34,7 @@ CREATE TABLE `admin` (
 -- ----------------------------
 -- Records of admin
 -- ----------------------------
-INSERT INTO `admin` VALUES ('1', 'admin', 'eyJpdiI6Ink0S0tEemtWN2RzTDhpXC9cLzNlRk5Idz09IiwidmFsdWUiOiJnU1RsK1BpMmtKemlXc2VsUzAyb2xBPT0iLCJtYWMiOiJjMTFiM2RjOTNmYmU3ZjQ4OWM5M2ZhZDgxOTVlNzkyOTNmMmRkNjk5MjMwNzU2NDE0YmRiZDRkYjNhYWI2ZjZlIn0=', '1', '127.0.0.1', '2018-07-09 13:41:55', '2020-01-06 13:03:43', '2020-01-06 01:03:43');
+INSERT INTO `admin` VALUES ('1', 'admin', 'eyJpdiI6Ink0S0tEemtWN2RzTDhpXC9cLzNlRk5Idz09IiwidmFsdWUiOiJnU1RsK1BpMmtKemlXc2VsUzAyb2xBPT0iLCJtYWMiOiJjMTFiM2RjOTNmYmU3ZjQ4OWM5M2ZhZDgxOTVlNzkyOTNmMmRkNjk5MjMwNzU2NDE0YmRiZDRkYjNhYWI2ZjZlIn0=', '1', '127.0.0.1', '2018-07-09 13:41:55', '2020-01-07 12:56:40', '2020-01-07 12:56:40');
 
 -- ----------------------------
 -- Table structure for `area`
@@ -71,7 +71,7 @@ CREATE TABLE `attribute` (
 -- ----------------------------
 -- Records of attribute
 -- ----------------------------
-INSERT INTO `attribute` VALUES ('1', '网站主域名', 'domain', 'lucas.com', '1');
+INSERT INTO `attribute` VALUES ('1', '网站主域名', 'domain', 'http://www.lucas.com', '1');
 INSERT INTO `attribute` VALUES ('2', '网站标题', 'title', 'TTvip - 美女号外', '1');
 INSERT INTO `attribute` VALUES ('3', '网站关键词', 'keywords', 'TTvip，美女号外，狼群，SgWolf，SgWolves，天上人间，888，8090，727，Singapore Escorts, Singapore Sex Freelance, Backpage, Locanto, 新加坡陪游，高端美女，Singapore Massage, 新加坡按摩', '1');
 INSERT INTO `attribute` VALUES ('4', '网站描述', 'description', 'Singapore\'s most reliable adult escort website: www.TTvip7.comFocusing on quality, you are sure to find your desired companion! Prices ranged from $100SGD-$260SGD generally.', '1');
@@ -97,11 +97,57 @@ CREATE TABLE `comments` (
   PRIMARY KEY (`id`),
   KEY `parent_id` (`parent_id`) USING BTREE,
   KEY `girl_id` (`g_id`) USING BTREE
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of comments
 -- ----------------------------
+INSERT INTO `comments` VALUES ('1', '0', '5', 'eleven1', 'd\r\nd\r\nd[em0][em1][em2][em3][em4][em5][em6]', 'hidden', '1', '2020-01-07 16:14:23', '2020-01-07 04:58:13');
+INSERT INTO `comments` VALUES ('4', '0', '5', 'eleven1', 'test\r\ntest\r\n[em3][em4]', '', '1', '2020-01-07 16:13:48', '0000-00-00 00:00:00');
+INSERT INTO `comments` VALUES ('5', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:13:25', '2020-01-07 09:13:25');
+INSERT INTO `comments` VALUES ('6', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:13:26', '2020-01-07 09:13:26');
+INSERT INTO `comments` VALUES ('7', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:13:27', '2020-01-07 09:13:27');
+INSERT INTO `comments` VALUES ('8', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:13:27', '2020-01-07 09:13:27');
+INSERT INTO `comments` VALUES ('9', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:13:27', '2020-01-07 09:13:27');
+INSERT INTO `comments` VALUES ('10', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:13:27', '2020-01-07 09:13:27');
+INSERT INTO `comments` VALUES ('11', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:13:27', '2020-01-07 09:13:27');
+INSERT INTO `comments` VALUES ('12', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:13:27', '2020-01-07 09:13:27');
+INSERT INTO `comments` VALUES ('13', '0', '5', 'eleven1', 'fsdfsdf', '', '0', '2020-01-07 09:13:29', '2020-01-07 09:13:29');
+INSERT INTO `comments` VALUES ('14', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:13:37', '2020-01-07 09:13:37');
+INSERT INTO `comments` VALUES ('15', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:13:38', '2020-01-07 09:13:38');
+INSERT INTO `comments` VALUES ('16', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:13:42', '2020-01-07 09:13:42');
+INSERT INTO `comments` VALUES ('17', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:14:11', '2020-01-07 09:14:11');
+INSERT INTO `comments` VALUES ('18', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:14:22', '2020-01-07 09:14:22');
+INSERT INTO `comments` VALUES ('19', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:14:23', '2020-01-07 09:14:23');
+INSERT INTO `comments` VALUES ('20', '0', '5', 'eleven1', 'aaaa', '', '0', '2020-01-07 09:14:47', '2020-01-07 09:14:47');
+INSERT INTO `comments` VALUES ('21', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:15:02', '2020-01-07 09:15:02');
+INSERT INTO `comments` VALUES ('22', '0', '5', 'eleven1', 'eeee', '', '0', '2020-01-07 09:15:10', '2020-01-07 09:15:10');
+INSERT INTO `comments` VALUES ('23', '0', '5', '', '', '', '0', '2020-01-07 09:15:41', '2020-01-07 09:15:41');
+INSERT INTO `comments` VALUES ('24', '0', '5', '', '', '', '0', '2020-01-07 09:15:42', '2020-01-07 09:15:42');
+INSERT INTO `comments` VALUES ('25', '0', '5', '', '', '', '0', '2020-01-07 09:15:42', '2020-01-07 09:15:42');
+INSERT INTO `comments` VALUES ('26', '0', '5', '', '', '', '0', '2020-01-07 09:15:43', '2020-01-07 09:15:43');
+INSERT INTO `comments` VALUES ('27', '0', '1', '', '', '', '0', '2020-01-07 09:16:12', '2020-01-07 09:16:12');
+INSERT INTO `comments` VALUES ('28', '0', '1', '', '', '', '0', '2020-01-07 09:16:13', '2020-01-07 09:16:13');
+INSERT INTO `comments` VALUES ('29', '0', '1', '', '', '', '0', '2020-01-07 09:16:13', '2020-01-07 09:16:13');
+INSERT INTO `comments` VALUES ('30', '0', '1', '', '', '', '0', '2020-01-07 09:16:15', '2020-01-07 09:16:15');
+INSERT INTO `comments` VALUES ('2', '1', '5', 'eleven1', 'second content', null, '1', '2020-01-07 16:13:48', '0000-00-00 00:00:00');
+INSERT INTO `comments` VALUES ('3', '0', '5', 'eleven1', 'a\r\nb\r\nc[em0][em1][em2][em3][em4][em5][em6]', '', '1', '2020-01-07 14:18:54', '2020-01-07 06:00:45');
+INSERT INTO `comments` VALUES ('31', '0', '1', '', '', '', '0', '2020-01-07 09:16:17', '2020-01-07 09:16:17');
+INSERT INTO `comments` VALUES ('32', '0', '5', '', '', '', '0', '2020-01-07 09:17:31', '2020-01-07 09:17:31');
+INSERT INTO `comments` VALUES ('33', '0', '5', '', '', '', '0', '2020-01-07 09:17:58', '2020-01-07 09:17:58');
+INSERT INTO `comments` VALUES ('34', '0', '5', '', '', '', '0', '2020-01-07 09:18:13', '2020-01-07 09:18:13');
+INSERT INTO `comments` VALUES ('35', '0', '5', '', '', '', '0', '2020-01-07 09:18:35', '2020-01-07 09:18:35');
+INSERT INTO `comments` VALUES ('36', '0', '5', '', '', '', '0', '2020-01-07 09:19:04', '2020-01-07 09:19:04');
+INSERT INTO `comments` VALUES ('37', '0', '5', '', '', '', '0', '2020-01-07 09:19:17', '2020-01-07 09:19:17');
+INSERT INTO `comments` VALUES ('38', '0', '5', '', '', '', '0', '2020-01-07 09:19:21', '2020-01-07 09:19:21');
+INSERT INTO `comments` VALUES ('39', '0', '5', '', '', '', '0', '2020-01-07 09:19:58', '2020-01-07 09:19:58');
+INSERT INTO `comments` VALUES ('40', '0', '5', '', '', '', '0', '2020-01-07 09:20:12', '2020-01-07 09:20:12');
+INSERT INTO `comments` VALUES ('41', '0', '5', '', '', '', '0', '2020-01-07 09:21:35', '2020-01-07 09:21:35');
+INSERT INTO `comments` VALUES ('42', '0', '5', '', '', '', '0', '2020-01-07 09:22:16', '2020-01-07 09:22:16');
+INSERT INTO `comments` VALUES ('43', '0', '5', '', '', '', '0', '2020-01-07 09:22:31', '2020-01-07 09:22:31');
+INSERT INTO `comments` VALUES ('44', '0', '5', '', '', '', '0', '2020-01-07 09:22:48', '2020-01-07 09:22:48');
+INSERT INTO `comments` VALUES ('45', '0', '5', '', '', '', '0', '2020-01-07 09:23:09', '2020-01-07 09:23:09');
+INSERT INTO `comments` VALUES ('46', '0', '5', '', '', '', '0', '2020-01-07 09:23:58', '2020-01-07 09:23:58');
 
 -- ----------------------------
 -- Table structure for `girlphotos`
@@ -231,4 +277,4 @@ CREATE TABLE `members` (
 -- Records of members
 -- ----------------------------
 INSERT INTO `members` VALUES ('3', '0', 'eyJpdiI6IlE1ZnRlMmRLeFFXcTYzdzBwbUV6ZHc9PSIsInZhbHVlIjoiTVFQaEltR2pwSnRKYTJxUTMyZFN3QT09IiwibWFjIjoiZTJjNDkwMzIxYzk3NWE1OWY3MzlkYmExY2E3NDM3MGQ3YmQzNmMxYTNmMDJmOWM1ZDYzMDIwYzNiNTg1M2Q5NiJ9', 'eleventest', '156156', 'sdfsd@qq.com', '5', '1', '127.0.0.1', '2020-01-05 07:33:05', '127.0.0.2', '2020-01-05 07:46:57', '2020-01-05 07:18:11');
-INSERT INTO `members` VALUES ('5', '3', 'eyJpdiI6ImE1T21ld1p1eDJ2NFQzN3Vub0s3ZXc9PSIsInZhbHVlIjoiaGFSVlwvTWZ3S3lmclp5Q3pkWkwzK1E9PSIsIm1hYyI6ImYyNjJjYzExNDc1Y2MxZDU4MTc0ZTBmYWY4YzVlMzY4MDNjNGM0ZjA4OGIwMGE0M2MzOWI0MTg5MTE0YWE0YzMifQ==', 'eleven1', '123123', 'sdfsd@qq.com', '1', '1', '127.0.0.1', '2020-01-05 08:28:38', '127.0.0.1', '2020-01-05 17:18:32', '2020-01-05 07:46:57');
+INSERT INTO `members` VALUES ('5', '3', 'eyJpdiI6ImE1T21ld1p1eDJ2NFQzN3Vub0s3ZXc9PSIsInZhbHVlIjoiaGFSVlwvTWZ3S3lmclp5Q3pkWkwzK1E9PSIsIm1hYyI6ImYyNjJjYzExNDc1Y2MxZDU4MTc0ZTBmYWY4YzVlMzY4MDNjNGM0ZjA4OGIwMGE0M2MzOWI0MTg5MTE0YWE0YzMifQ==', 'eleven1', '123123', 'sdfsd@qq.com', '1', '1', '127.0.0.1', '2020-01-07 09:38:16', '127.0.0.1', '2020-01-07 09:38:16', '2020-01-05 07:46:57');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\frontend;
 
+use App\Model\Comments;
 use App\Model\Girls;
 use App\Model\Girlphotos;
 use App\Model\Attribute;
@@ -39,12 +40,12 @@ class IndexController extends MyController{
         $girls = Girls::select('girls.id','girls.cover','girls.name','girls.height','girls.videolist','girls.boobs','girls.price','girls.massage','girls.threesome','girls.created_at')
             ->where('girls.show',1)->orderBy('girls.id', 'desc')->get()->toArray();
 
-        return view('frontend.index',['girls' => $girls,'base' => $this->base,'category' => $this->category])->with('username',session('username'))->with('coin',session('coin'));
+        return view('frontend.index',['girls' => $girls,'base' => $this->base,'category' => $this->category])->with('username',session('username'))->with('coin',session('coin'))->with('uid',session('uid'));
 
     }
 
 
-
+    //妹子介绍页面
     public function beauty($id){
         $girl = Girls::select('girls.*','area.area_name')
             ->leftJoin('area',function ($join){
@@ -72,15 +73,36 @@ class IndexController extends MyController{
             $videosArray = explode(PHP_EOL,$videos);
         }
         $photos = Girlphotos::where('g_id',$id)->get()->toArray();
-        return view('frontend.beautyview',
-            ['girl'=> $girl[0],'serviceArray' => $serviceArray,'photos' => $photos,'videosArray' => $videosArray,'attribute' => $this->attribute,'base'=>$this->base,'category'=>$this->category]
-        );
+
+        //获取该妹子的评论
+        $comments = $this->getcommentlist(0,$comments,$id);
+
+            return view('frontend.beautyview',
+            ['girl'=> $girl[0],'serviceArray' => $serviceArray,'photos' => $photos,'comments' => $comments,'videosArray' => $videosArray,'attribute' => $this->attribute,'base'=>$this->base,'category'=>$this->category]
+        )->with('username',session('username'))->with('coin',session('coin'))->with('uid',session('uid'));
     }
 
-    public function contact(){
-        return view('frontend.contactus',['number' => $this->number,'telegram' => $this->telegram,'weixin' => $this->weixin]);
+    //递归获取评论列表
+    private function getcommentlist($parent_id = 0,&$result = array(),$g_id){
+        $comments = Comments::select('id','nickname','content','created_at','g_id')->where('g_id',$g_id)->where('parent_id',$parent_id)->where('status',1)->orderBy('id','asc')->get()->toArray();
+        if(empty($comments)){
+            return array();
+        }
+        $regex = '/\[em(.*)\]/iU';
+        $replacement = '<img src="/resources/views/frontend/images/face/$1.gif">';
+        foreach ($comments as $key => $comment) {
+            $comment['content'] = str_replace(PHP_EOL,'<br>',$comment['content']);
+            $comment['content'] =  preg_replace($regex,$replacement,$comment['content']);
+
+            $thisArr=&$result[];
+            $comment["children"] = $this->getcommentlist($comment["id"],$thisArr,$g_id);
+            $thisArr = $comment;
+        }
+        return $result;
     }
 
+
+    //用户登陆
     public function login(Request $request){
         if($request->isMethod('post')){
             $loginIp = $request->getClientIp();
@@ -125,6 +147,7 @@ class IndexController extends MyController{
 
     }
 
+    //用户注册
     public function register(Request $request){
         if($request->isMethod('post')){
             $inputData = array();
@@ -192,6 +215,7 @@ class IndexController extends MyController{
     }
 
 
+    //会员注销
     public function logout(Request $request){
         $this->deleteAllSession($request);
         return redirect('/');
@@ -219,7 +243,67 @@ class IndexController extends MyController{
             $girls = Girls::select('girls.id','girls.cover','girls.name','girls.height','girls.videolist','girls.boobs','girls.price','girls.massage','girls.threesome','girls.created_at')
                 ->where('girls.videolist','!=','')->where('girls.show',1)->orderBy('girls.id', 'desc')->get()->toArray();
         }
-        return view('frontend.index',['girls' => $girls,'base' => $this->base,'category' => $this->category])->with('username',session('username'))->with('coin',session('coin'));
+        return view('frontend.index',['girls' => $girls,'base' => $this->base,'category' => $this->category])->with('username',session('username'))->with('coin',session('coin'))->with('uid',session('uid'));
 
     }
+
+    //搜索
+    public function search(Request $request){
+        $key = request()->input('key');
+        $girls = Girls::select('girls.id','girls.cover','girls.name','girls.height','girls.videolist','girls.boobs','girls.price','girls.massage','girls.threesome','girls.created_at')
+            ->where('name','like','%'.$key.'%')->where('girls.show',1)->orderBy('girls.id', 'desc')->get()->toArray();
+
+        return view('frontend.index',['girls' => $girls,'base' => $this->base,'category' => $this->category,'keyword' => $key])->with('username',session('username'))->with('coin',session('coin'))->with('uid',session('uid'));
+
+    }
+
+    //评论
+    public function reply(Request $request){
+        if($request->isMethod('post')){
+            $inputData['parent_id'] = request()->input('pid');
+            $inputData['g_id'] = request()->input('gid');
+            $inputData['content'] = request()->input('body');
+            $inputData['nickname'] = request()->input('nickname');
+            $inputData['hidden_content'] = request()->input('tel');
+
+            if($inputData['g_id'] == '' or $inputData['g_id'] == 0)
+            {
+                $reData['status'] = 0;
+                $reData['info'] = "Error<br>出错";
+                echo json_encode($reData);
+                exit;
+            }
+           if($inputData['content'] == '')
+           {
+               $reData['status'] = 0;
+               $reData['info'] = "Content cannot be empty<br>评论内容不能为空";
+               echo json_encode($reData);
+               exit;
+           }
+           if($inputData['nickname'] == '')
+            {
+                $reData['status'] = 0;
+                $reData['info'] = "nickname cannot be empty<br>昵称不能为空";
+                echo json_encode($reData);
+                exit;
+            }
+
+            $result = Comments::create($inputData);
+            if($result->id)
+            {
+                $reData['status'] = 2;
+                $reData['info'] = "Submitted to success<br>评论提交成功";
+                echo json_encode($reData);
+                exit;
+            }else{
+                $reData['status'] = 0;
+                $reData['info'] = "Submitted to fail<br>评论提交失败";
+                echo json_encode($reData);
+                exit;
+            }
+
+        }
+    }
+
+
 }

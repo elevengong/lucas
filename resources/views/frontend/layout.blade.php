@@ -5,21 +5,24 @@
     <title>{{$base['title']}}</title>
     <meta name="keywords" content="{!! $base['keywords'] !!}" />
     <meta name="description" content="{!!$base['description']!!}" />
-    <link href="http://manhua.com/resources/views/frontend/pc/images/favicon.ico" rel="shortcut icon" />
+    <link href="<?php echo asset( "/resources/views/frontend/images/favicon.ico?ver=1.0") ?>" rel="shortcut icon" />
     <link rel="stylesheet" href="<?php echo asset( "/resources/views/frontend/css/css.css?ver=1.0") ?>">
+    <script src="<?php echo asset( "/resources/views/frontend/js/jquery.min.js?ver=1.0") ?>"></script>
+    <script src="<?php echo asset( "/resources/views/frontend/js/layer/layer.js") ?>"></script>
+    <script src="<?php echo asset( "/resources/views/frontend/js/clipboard.min.js") ?>"></script>
 </head>
 
 <body>
 <div class="header">
     <div class="logo wrap">
-        <h1><a href="/">&nbsp;</a></h1>
-        <div class="title">这里要改</div>
+        <h1><a href="/">{{isset($base['web_nickname'])?$base['web_nickname']:'LL'}}</a></h1>
 
     </div>
     <div class="search wrap">
         <div style="width: 450px;float: left">
-            <form method="get" action="index.php">
-                <input type="text" name="key" placeholder="输入关键词"><button>搜索SEARCH</button>
+            <form method="post" action="/search.html">
+                {{csrf_field()}}
+                <input type="text" name="key" id="key" placeholder="输入关键词" value="{{isset($keyword)?$keyword:''}}"><button>搜索SEARCH</button>
             </form>
         </div>
 
@@ -28,7 +31,7 @@
             @else
 
             <div class="memberbox">
-                <ul>
+                <ul style="margin-top: 6px;">
                     <li class="reg_share">
                         <span>用户:<a href="/user/center.html">eleven</a></span>
                     </li>
@@ -36,8 +39,14 @@
                         <span>新币:<a href="#">{{$coin}}个</a></span>
                     </li>
                     <li class="reg_share">
-                        <span><a href="/user/logout">注销</a></span>
+                    <button type="button" class="btn copyagentlink" data-clipboard-text="{{$base['domain']}}/agent/{{$uid}}" style="width:110px;height:25px;font-size:14px;border-radius:3px;">点击复推广链接</button>
                     </li>
+
+                    <li class="reg_share">
+                        <span><a href="/user/logout" style="color: red;">注销</a></span>
+                    </li>
+
+
 
                 </ul>
             </div>
@@ -61,5 +70,17 @@
 <div class="footer wrap">{!! $base['copyright'] !!}</div>
 <div style="display: none;">
     <!-- 统计 -->
-</div></body>
+</div>
+<script>
+    $(function() {
+        var clipboardlink = new Clipboard('.copyagentlink');
+        clipboardlink.on('success', function(e) {
+            layer.msg('推广链接复制成功，请发送给好友注册获取新币');
+        });
+        clipboardlink.on('error', function(e) {
+            layer.msg('推广链接复制失败');
+        });
+    });
+</script>
+</body>
 </html>
