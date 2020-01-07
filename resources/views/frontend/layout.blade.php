@@ -33,13 +33,13 @@
             <div class="memberbox">
                 <ul style="margin-top: 6px;">
                     <li class="reg_share">
-                        <span>用户:<a href="/user/center.html">eleven</a></span>
+                        <span>用户:<a href="/user/center.html">{{$username}}</a></span>
                     </li>
                     <li class="reg_share">
                         <span>新币:<a href="#">{{$coin}}个</a></span>
                     </li>
                     <li class="reg_share">
-                    <button type="button" class="btn copyagentlink" data-clipboard-text="{{$base['domain']}}/agent/{{$uid}}" style="width:110px;height:25px;font-size:14px;border-radius:3px;">点击复推广链接</button>
+                    <button type="button" class="btn copyagentlink" data-clipboard-text="{{$base['domain']}}/agent/{{$uid}}" style="width:125px;height:25px;font-size:14px;border-radius:3px;">点击复制推广链接</button>
                     </li>
 
                     <li class="reg_share">

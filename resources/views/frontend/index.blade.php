@@ -343,7 +343,7 @@
                             @if($girl['massage']==2)<span class="mass"></span>@endif
                             @if($girl['threesome']==2)<span class="p3"></span>@endif
                             <!-- 如果后台添加时间在7天以内，当做新货-->
-                            @if(date("Ymd",strtotime($girl['created_at']))+6 >= date("Ymd"))<span class="new">NEW　新货　{{date("Y/m/d",strtotime($girl['created_at']))}}03/01/2020</span>@endif
+                            @if(date("Ymd",strtotime($girl['created_at']))+6 >= date("Ymd"))<span class="new">NEW　新货　{{date("Y/m/d",strtotime($girl['created_at']))}}</span>@endif
                         </li>
                     @endforeach
                 </ul>
