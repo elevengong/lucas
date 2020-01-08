@@ -67,7 +67,7 @@
         <div class="my-gallery fix">
             @foreach($photos as $photo)
             <figure>
-                <a data-size="1000x1332" href="{{$photo['photo']}}">
+                <a data-size="{{$photo['datasize']=='x'?'1000x1332':$photo['datasize']}}" href="{{$photo['photo']}}">
                     <img src="{{$photo['photo']}}">
                 </a>
             </figure>
@@ -210,7 +210,7 @@
 
 <script src="<?php echo asset( "/resources/views/frontend/js/photoswipe.min.js") ?>"></script>
 <script src="<?php echo asset( "/resources/views/frontend/js/photoswipe-ui-default.min.js") ?>"></script>
-<script src="<?php echo asset( "/resources/views/frontend/js/initPhotoSwipeFromDOM.js") ?>"></script>
+<script src="<?php echo asset( "/resources/views/frontend/js/initPhotoSwipeFromDOM.js?ver=1.1") ?>"></script>
 
 <script>initPhotoSwipeFromDOM('.my-gallery');</script>
 

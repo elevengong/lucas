@@ -58,6 +58,7 @@ class IndexController extends MyController{
 
     //妹子介绍页面
     public function beauty($id){
+
         $girl = Girls::select('girls.*','area.area_name')
             ->leftJoin('area',function ($join){
                 $join->on('area.id','=','girls.area_id');
@@ -84,6 +85,18 @@ class IndexController extends MyController{
             $videosArray = explode(PHP_EOL,$videos);
         }
         $photos = Girlphotos::where('g_id',$id)->get()->toArray();
+
+        foreach ($photos as $key => $photo)
+        {
+            $tem = str_replace('/public/uploads','public/uploads',$photo['photo']);
+            $photoInfo = @getimagesize($tem);
+            if($photos!='false')
+            {
+                $photos[$key]['datasize'] = $photoInfo['0'].'x'.$photoInfo['1'];
+            }else{
+                $photos[$key]['datasize'] = '1000x1332';
+            }
+        }
 
         //获取该妹子的评论
         $comments = $this->getcommentlist(0,$comments,$id);
