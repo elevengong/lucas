@@ -88,6 +88,9 @@ class IndexController extends MyController{
         //获取该妹子的评论
         $comments = $this->getcommentlist(0,$comments,$id);
 
+        //浏览数+1
+        Girls::where('id',$id)->increment('views',1);
+
             return view('frontend.beautyview',
             ['girl'=> $girl[0],'serviceArray' => $serviceArray,'photos' => $photos,'comments' => $comments,'videosArray' => $videosArray,'attribute' => $this->attribute,'base'=>$this->base,'category'=>$this->category]
         )->with('username',session('username'))->with('coin',session('coin'))->with('uid',session('uid'));
