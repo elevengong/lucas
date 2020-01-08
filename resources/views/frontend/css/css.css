@@ -255,7 +255,7 @@ button {
 
 /*i-title*/
 .i-title {
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
     position: relative;
     clear: both;
     height: 40px;
@@ -406,6 +406,7 @@ button {
     text-align: center;
     color: #634E4B;
     font-size: 18px;
+    width: 1156px;
 }
 
 /*showbox*/
@@ -415,7 +416,7 @@ button {
     width: 1156px;
     margin-top: 30px;
     border-radius: 10px;
-    border: 2px solid black;
+    border: 1px solid black;
 }
 
 .showbox .girl-title {
@@ -428,7 +429,7 @@ button {
     clear: both;
     float: none;
     font-weight: normal;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
 }
 
 .showbox .imgbox {
@@ -955,5 +956,205 @@ input[type="text"], input[type="password"], textarea {
     outline-style: none;
     -webkit-appearance: none;
 }
+.searchbox{
+    width: 450px;float: left
+}
+.videoshow{
+    height:400px;width:550px;background-color:#000;
+}
+.hidden-content{
+    margin-left:20px;
+}
+.row-three{
+    font-size:18px;color:black;text-align:center;padding-top:10px;
+}
+
+@media only screen and (max-width: 550px) {
+    .wrap {
+        width: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .header {
+        width: auto;
+        min-width: 100%;
+
+    }
+    .header .logo {
+        height: auto;
+    }
+    .header .logo h1 {
+        width: 100px;
+    }
+    .header .logo h1 a {
+        height:auto;
+        line-height: 125px;
+        font-size: 65px;
+    }
+    .searchbox {
+        width: 100%;
+    }
+    .header .search input{
+        width: 68%;
+    }
+    .header .search button{
+        width: 25%;
+    }
+    .header .search .memberbox{
+        text-align: center;
+        float:none;
+        clear: both;
+        padding-top: 1rem;
+    }
+    .showbox {
+        border: none;
+    }
+    .showbox .imgbox img {
+        width:100%;
+        height: 100%;
+    }
+    .showbox .about {
+        float:none;
+        width: 100%;
+    }
+    .showbox .girl-title{
+        font-size: 18px;
+        padding-bottom:0px;
+        margin-bottom: 10px;
+    }
+    .showbox .about p big {
+        font-size: 100%;
+    }
+    .contact a{
+        margin-top: 10px;
+    }
+    .videoshow{
+        width: 100%;
+        height: 100%;
+    }
+    .mb20 ul li p {
+        width: 95%;
+        font-size: 16px;
+    }
+    .more-pics {
+        padding:0;
+    }
+    .more-pics .my-gallery figure {
+        width: 100%;
+    }
+    .more-pics .my-gallery {
+        width: auto;
+        height:auto;
+    }
+    .more-pics .my-gallery figure a img {
+        height:auto;
+    }
+    .face {
+        height: auto;
+    }
+    .face ul li {
+        width: 20%;
+        border-left: 1px solid #FCE089;
+    }
+    .reply .row {
+        clear: both;
+    }
+    .comment-btn{
+        margin-top: 10px;
+        margin-left:0px;
+
+    }
+    .hidden-content {
+        margin-left:0px;
+    }
+    .reply{
+        padding:0px;
+    }
+    .row-two{
+        text-align: center;
+        margin-top: 20px;
+        clear: both;
+    }
+    .row-three{
+        font-size: 13px;
+        text-align: left;
+    }
+    .footer {
+        border-top: 1px solid #624D4C;
+        font-size: 15px;
+    }
+    .header .nav ul li {
+        width: 32%;
+        margin-left: 1px;
+        margin-top: 1px;
+    }
+    .reply .row input{
+        width: 90%;
+    }
+    .mb20 .servicelist {
+        padding: 0 10px;
+    }
+    .header .nav ul li a{
+        text-shadow:none;
+        font-size: 12px;
+    }
+    .m1100 {
+        width:auto;
+        clear: both;
+        margin: 1px auto;
+    }
+    .bm .bm_h {
+        padding:0 0px;
+    }
+    #btn_clear{
+        margin-top: 10px;
+    }
+    .memberbox ul>li{
+        font-size: 16px;
+    }
+    .reg_share {
+        margin-right: 5px;
+    }
+    .index-lbox{
+        width: 100%;
+        float: right;
+    }
+    .index-rbox{
+        width: 100%;
+        float: left;
+    }
+    .index-lbox .new_title h1{
+        text-align: left;
+    }
+    .index-lbox .pics-box ul li {
+        width: auto;
+    }
+    .i-title{
+
+    }
+    .pics-box ul{
+        width: auto;
+    }
+    .index-lbox .pics-box ul li img{
+        height: auto;
+    }
+
+    .index-rbox .pics-box ul li{
+        margin-left:0px;
+        width: auto;
+        margin-right:0px;
+    }
+    .index-rbox .pics-box ul li img{
+        height: auto;
+        margin-right: 0px;
+    }
+    .pics-box ul li .video{
+        display: none;
+    }
+    .index-lbox .pics-box ul li .new , .pics-box ul li .new{
+        position: relative;
+        top: -7rem;
+    }
 
 
+}

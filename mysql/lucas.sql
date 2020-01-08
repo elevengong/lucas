@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2020-01-07 19:22:59
+Date: 2020-01-08 15:20:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -34,7 +34,7 @@ CREATE TABLE `admin` (
 -- ----------------------------
 -- Records of admin
 -- ----------------------------
-INSERT INTO `admin` VALUES ('1', 'admin', 'eyJpdiI6Ink0S0tEemtWN2RzTDhpXC9cLzNlRk5Idz09IiwidmFsdWUiOiJnU1RsK1BpMmtKemlXc2VsUzAyb2xBPT0iLCJtYWMiOiJjMTFiM2RjOTNmYmU3ZjQ4OWM5M2ZhZDgxOTVlNzkyOTNmMmRkNjk5MjMwNzU2NDE0YmRiZDRkYjNhYWI2ZjZlIn0=', '1', '127.0.0.1', '2018-07-09 13:41:55', '2020-01-07 12:56:40', '2020-01-07 12:56:40');
+INSERT INTO `admin` VALUES ('1', 'admin', 'eyJpdiI6Ink0S0tEemtWN2RzTDhpXC9cLzNlRk5Idz09IiwidmFsdWUiOiJnU1RsK1BpMmtKemlXc2VsUzAyb2xBPT0iLCJtYWMiOiJjMTFiM2RjOTNmYmU3ZjQ4OWM5M2ZhZDgxOTVlNzkyOTNmMmRkNjk5MjMwNzU2NDE0YmRiZDRkYjNhYWI2ZjZlIn0=', '1', '127.0.0.1', '2018-07-09 13:41:55', '2020-01-08 11:02:40', '2020-01-08 11:02:40');
 
 -- ----------------------------
 -- Table structure for `area`
@@ -104,50 +104,8 @@ CREATE TABLE `comments` (
 -- ----------------------------
 INSERT INTO `comments` VALUES ('1', '0', '5', 'eleven1', 'd\r\nd\r\nd[em0][em1][em2][em3][em4][em5][em6]', 'hidden', '1', '2020-01-07 16:14:23', '2020-01-07 04:58:13');
 INSERT INTO `comments` VALUES ('4', '0', '5', 'eleven1', 'test\r\ntest\r\n[em3][em4]', '', '1', '2020-01-07 16:13:48', '0000-00-00 00:00:00');
-INSERT INTO `comments` VALUES ('5', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:13:25', '2020-01-07 09:13:25');
-INSERT INTO `comments` VALUES ('6', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:13:26', '2020-01-07 09:13:26');
-INSERT INTO `comments` VALUES ('7', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:13:27', '2020-01-07 09:13:27');
-INSERT INTO `comments` VALUES ('8', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:13:27', '2020-01-07 09:13:27');
-INSERT INTO `comments` VALUES ('9', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:13:27', '2020-01-07 09:13:27');
-INSERT INTO `comments` VALUES ('10', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:13:27', '2020-01-07 09:13:27');
-INSERT INTO `comments` VALUES ('11', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:13:27', '2020-01-07 09:13:27');
-INSERT INTO `comments` VALUES ('12', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:13:27', '2020-01-07 09:13:27');
-INSERT INTO `comments` VALUES ('13', '0', '5', 'eleven1', 'fsdfsdf', '', '0', '2020-01-07 09:13:29', '2020-01-07 09:13:29');
-INSERT INTO `comments` VALUES ('14', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:13:37', '2020-01-07 09:13:37');
-INSERT INTO `comments` VALUES ('15', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:13:38', '2020-01-07 09:13:38');
-INSERT INTO `comments` VALUES ('16', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:13:42', '2020-01-07 09:13:42');
-INSERT INTO `comments` VALUES ('17', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:14:11', '2020-01-07 09:14:11');
-INSERT INTO `comments` VALUES ('18', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:14:22', '2020-01-07 09:14:22');
-INSERT INTO `comments` VALUES ('19', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:14:23', '2020-01-07 09:14:23');
-INSERT INTO `comments` VALUES ('20', '0', '5', 'eleven1', 'aaaa', '', '0', '2020-01-07 09:14:47', '2020-01-07 09:14:47');
-INSERT INTO `comments` VALUES ('21', '0', '5', 'eleven1', '', '', '0', '2020-01-07 09:15:02', '2020-01-07 09:15:02');
-INSERT INTO `comments` VALUES ('22', '0', '5', 'eleven1', 'eeee', '', '0', '2020-01-07 09:15:10', '2020-01-07 09:15:10');
-INSERT INTO `comments` VALUES ('23', '0', '5', '', '', '', '0', '2020-01-07 09:15:41', '2020-01-07 09:15:41');
-INSERT INTO `comments` VALUES ('24', '0', '5', '', '', '', '0', '2020-01-07 09:15:42', '2020-01-07 09:15:42');
-INSERT INTO `comments` VALUES ('25', '0', '5', '', '', '', '0', '2020-01-07 09:15:42', '2020-01-07 09:15:42');
-INSERT INTO `comments` VALUES ('26', '0', '5', '', '', '', '0', '2020-01-07 09:15:43', '2020-01-07 09:15:43');
-INSERT INTO `comments` VALUES ('27', '0', '1', '', '', '', '0', '2020-01-07 09:16:12', '2020-01-07 09:16:12');
-INSERT INTO `comments` VALUES ('28', '0', '1', '', '', '', '0', '2020-01-07 09:16:13', '2020-01-07 09:16:13');
-INSERT INTO `comments` VALUES ('29', '0', '1', '', '', '', '0', '2020-01-07 09:16:13', '2020-01-07 09:16:13');
-INSERT INTO `comments` VALUES ('30', '0', '1', '', '', '', '0', '2020-01-07 09:16:15', '2020-01-07 09:16:15');
 INSERT INTO `comments` VALUES ('2', '1', '5', 'eleven1', 'second content', null, '1', '2020-01-07 16:13:48', '0000-00-00 00:00:00');
 INSERT INTO `comments` VALUES ('3', '0', '5', 'eleven1', 'a\r\nb\r\nc[em0][em1][em2][em3][em4][em5][em6]', '', '1', '2020-01-07 14:18:54', '2020-01-07 06:00:45');
-INSERT INTO `comments` VALUES ('31', '0', '1', '', '', '', '0', '2020-01-07 09:16:17', '2020-01-07 09:16:17');
-INSERT INTO `comments` VALUES ('32', '0', '5', '', '', '', '0', '2020-01-07 09:17:31', '2020-01-07 09:17:31');
-INSERT INTO `comments` VALUES ('33', '0', '5', '', '', '', '0', '2020-01-07 09:17:58', '2020-01-07 09:17:58');
-INSERT INTO `comments` VALUES ('34', '0', '5', '', '', '', '0', '2020-01-07 09:18:13', '2020-01-07 09:18:13');
-INSERT INTO `comments` VALUES ('35', '0', '5', '', '', '', '0', '2020-01-07 09:18:35', '2020-01-07 09:18:35');
-INSERT INTO `comments` VALUES ('36', '0', '5', '', '', '', '0', '2020-01-07 09:19:04', '2020-01-07 09:19:04');
-INSERT INTO `comments` VALUES ('37', '0', '5', '', '', '', '0', '2020-01-07 09:19:17', '2020-01-07 09:19:17');
-INSERT INTO `comments` VALUES ('38', '0', '5', '', '', '', '0', '2020-01-07 09:19:21', '2020-01-07 09:19:21');
-INSERT INTO `comments` VALUES ('39', '0', '5', '', '', '', '0', '2020-01-07 09:19:58', '2020-01-07 09:19:58');
-INSERT INTO `comments` VALUES ('40', '0', '5', '', '', '', '0', '2020-01-07 09:20:12', '2020-01-07 09:20:12');
-INSERT INTO `comments` VALUES ('41', '0', '5', '', '', '', '0', '2020-01-07 09:21:35', '2020-01-07 09:21:35');
-INSERT INTO `comments` VALUES ('42', '0', '5', '', '', '', '0', '2020-01-07 09:22:16', '2020-01-07 09:22:16');
-INSERT INTO `comments` VALUES ('43', '0', '5', '', '', '', '0', '2020-01-07 09:22:31', '2020-01-07 09:22:31');
-INSERT INTO `comments` VALUES ('44', '0', '5', '', '', '', '0', '2020-01-07 09:22:48', '2020-01-07 09:22:48');
-INSERT INTO `comments` VALUES ('45', '0', '5', '', '', '', '0', '2020-01-07 09:23:09', '2020-01-07 09:23:09');
-INSERT INTO `comments` VALUES ('46', '0', '5', '', '', '', '0', '2020-01-07 09:23:58', '2020-01-07 09:23:58');
 
 -- ----------------------------
 -- Table structure for `girlphotos`
@@ -250,7 +208,7 @@ INSERT INTO `girls` VALUES ('1', '丰乳肥臀小蛮腰！热情奔放！欢迎�
 INSERT INTO `girls` VALUES ('2', ' 36C妩媚身材！调情高手！欢迎品尝！', '/public/uploads/20200106/1578304564zee6y.jpg', 'M3372 KiKi', '23 Years Old', '165cm', '36C', '49KG', '包房', 'Tanjong Pagar 丹绒巴葛', '2', '$100/45mins/Massage+HJ', null, '90149250', '', '1:Simple Massage♥简单按摩\r\n2:Regular Massage♥正规按摩\r\n3:Kissing♥轻吻\r\n4:BBBJ♥无套口交\r\n5:Roam♥全身漫游\r\n6:Boobs Gliding♥性感胸推\r\n7:Lick Nipples♥舔奶头\r\n8:HJ♥打飞机\r\n9:Shiatsu Massage♥指压按摩\r\n10:Teasing Massage♥挑逗性按摩\r\n11:Head/Neck/Shoulder Massage♥头/颈/肩按摩\r\n12:GFE★女朋友感觉', 'http://ttvip7.com//upload/video/191113/15735807419103.mp4', '', '0', '2', '1', '1', '2020-01-06 17:59:43', '2020-01-06 17:59:43');
 INSERT INTO `girls` VALUES ('3', '湖南气质型！大眼睛好身材！欢迎品尝！', '/public/uploads/20200106/1578304995NXNNK.jpg', 'M3576 Tian Tian（甜甜）', '23 Years Old', '161cm', '36D', '48KG', '包房', 'Tanjong Pagar 丹绒巴葛', '1', '$100/45mins/Massage+HJ', '', '94683049', '', '1:Simple Massage♥简单按摩\r\n2:Regular Massage♥正规按摩\r\n3:Frenching♥舌吻\r\n4:CBJ♥有套口交\r\n5:CIM♥有套口爆\r\n6:Roam♥全身漫游\r\n7:COB♥射身\r\n8:Boobs Gliding♥性感胸推\r\n9:Boobs Fuck♥乳交\r\n10:Butt Gliding♥性感臀推\r\n11:All Natural Boobs♥全天然胸\r\n12:Stockings Temptation♥丝袜诱惑\r\n13:Uniform seduction♥制服诱惑\r\n14:DongGuan Service♥莞式一条龙\r\n15:HJ♥打飞机', 'http://ttvip7.com/upload/video/191220/15768302308556.mp4', '', '0', '1', '1', '1', '2020-01-06 18:23:04', '2020-01-06 18:23:04');
 INSERT INTO `girls` VALUES ('4', '苗条可爱！健康小麦肌肤！小鸟依人！', '/public/uploads/20200106/1578305565ny32D.jpg', 'N3513 Annie（安妮）', '21 Years Old', '160cm', '34B', '44KG', '包房包套', 'Hotel（酒店）', '1', '$220/1/1FJ', '', '96145385', '', '1:Shower together♥鸳鸯浴\r\n2:Shower BJ♥浴中萧\r\n3:Simple Massage♥简单按摩\r\n4:Kissing♥轻吻\r\n5:BBBJ♥无套口交\r\n6:Deep Throat♥深喉\r\n7:CIM♥有套口爆\r\n8:Roam♥全身漫游\r\n9:COB♥射身\r\n10:69Type♥69式\r\n11:Boobs Gliding♥性感胸推\r\n12:Lick Nipples♥舔奶头\r\n13:Painting♥舔鲍鱼\r\n14:Boobs Fuck♥乳交\r\n15:Butt Gliding♥性感臀推\r\n16:FJ♥有套做爱\r\n17:All Natural Boobs♥全天然胸\r\n18:Stockings Temptation♥丝袜诱惑\r\n19:Uniform seduction♥制服诱惑\r\n20:No Indians♥不接印度\r\n21:No Caucasian♥不接洋人', '', '', '0', '1', '1', '1', '2020-01-06 18:14:49', '2020-01-06 18:14:49');
-INSERT INTO `girls` VALUES ('5', '高挑苗条！36E皮肤白滑！小鸟依人！', '/public/uploads/20200106/1578305797LWxkz.jpg', 'M3396 Mi Ya（米亞）', '23 Years Old', '165cm', '36E', '48KG', '包房', 'Tanjong Pagar 丹绒巴葛', '1', '$100/45mins/Massage+HJ', '', '98980664', '98980664', '1:Simple Massage♥简单按摩\r\n2:Regular Massage♥正规按摩\r\n3:Frenching♥舌吻\r\n4:CBJ♥有套口交\r\n5:CIM♥有套口爆\r\n6:Roam♥全身漫游\r\n7:COB♥射身\r\n8:Boobs Gliding♥性感胸推\r\n9:Lick Nipples♥舔奶头\r\n10:Boobs Fuck♥乳交\r\n11:Butt Gliding♥性感臀推\r\n12:All Natural Boobs♥全天然胸\r\n13:Stockings Temptation♥丝袜诱惑\r\n14:Uniform seduction♥制服诱惑\r\n15:Rimming♥毒龙', 'http://ttvip7.com//upload/video/191125/15746765525100.mp4', '', '0', '2', '1', '1', '2020-01-06 18:18:02', '2020-01-06 18:18:02');
+INSERT INTO `girls` VALUES ('5', '高挑苗条！36E皮肤白滑！小鸟依人！', '/public/uploads/20200106/1578305797LWxkz.jpg', 'M3396 Mi Ya（米亞）', '23 Years Old', '165cm', '36E', '48KG', '包房', 'Tanjong Pagar 丹绒巴葛', '1', '$100/45mins/Massage+HJ', '', '98980664', '98980664', '1:Simple Massage♥简单按摩\r\n2:Regular Massage♥正规按摩\r\n3:Frenching♥舌吻\r\n4:CBJ♥有套口交\r\n5:CIM♥有套口爆\r\n6:Roam♥全身漫游\r\n7:COB♥射身\r\n8:Boobs Gliding♥性感胸推\r\n9:Lick Nipples♥舔奶头\r\n10:Boobs Fuck♥乳交\r\n11:Butt Gliding♥性感臀推\r\n12:All Natural Boobs♥全天然胸\r\n13:Stockings Temptation♥丝袜诱惑\r\n14:Uniform seduction♥制服诱惑\r\n15:Rimming♥毒龙', 'http://ttvip7.com//upload/video/191125/15746765525100.mp4', '', '0', '2', '2', '1', '2020-01-08 15:15:14', '2020-01-08 15:15:14');
 
 -- ----------------------------
 -- Table structure for `members`
@@ -277,4 +235,4 @@ CREATE TABLE `members` (
 -- Records of members
 -- ----------------------------
 INSERT INTO `members` VALUES ('3', '0', 'eyJpdiI6IlE1ZnRlMmRLeFFXcTYzdzBwbUV6ZHc9PSIsInZhbHVlIjoiTVFQaEltR2pwSnRKYTJxUTMyZFN3QT09IiwibWFjIjoiZTJjNDkwMzIxYzk3NWE1OWY3MzlkYmExY2E3NDM3MGQ3YmQzNmMxYTNmMDJmOWM1ZDYzMDIwYzNiNTg1M2Q5NiJ9', 'eleventest', '156156', 'sdfsd@qq.com', '5', '1', '127.0.0.1', '2020-01-05 07:33:05', '127.0.0.2', '2020-01-05 07:46:57', '2020-01-05 07:18:11');
-INSERT INTO `members` VALUES ('5', '3', 'eyJpdiI6ImE1T21ld1p1eDJ2NFQzN3Vub0s3ZXc9PSIsInZhbHVlIjoiaGFSVlwvTWZ3S3lmclp5Q3pkWkwzK1E9PSIsIm1hYyI6ImYyNjJjYzExNDc1Y2MxZDU4MTc0ZTBmYWY4YzVlMzY4MDNjNGM0ZjA4OGIwMGE0M2MzOWI0MTg5MTE0YWE0YzMifQ==', 'eleven1', '123123', 'sdfsd@qq.com', '1', '1', '127.0.0.1', '2020-01-07 09:38:16', '127.0.0.1', '2020-01-07 09:38:16', '2020-01-05 07:46:57');
+INSERT INTO `members` VALUES ('5', '3', 'eyJpdiI6ImE1T21ld1p1eDJ2NFQzN3Vub0s3ZXc9PSIsInZhbHVlIjoiaGFSVlwvTWZ3S3lmclp5Q3pkWkwzK1E9PSIsIm1hYyI6ImYyNjJjYzExNDc1Y2MxZDU4MTc0ZTBmYWY4YzVlMzY4MDNjNGM0ZjA4OGIwMGE0M2MzOWI0MTg5MTE0YWE0YzMifQ==', 'eleven1', '123123', 'sdfsd@qq.com', '1', '1', '127.0.0.1', '2020-01-08 06:25:46', '127.0.0.1', '2020-01-08 06:25:46', '2020-01-05 07:46:57');

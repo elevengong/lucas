@@ -36,12 +36,23 @@ class IndexController extends MyController{
 
     }
 
+    //首页
     public function index(){
+        $leftList = $this->leftshow();
+
         $girls = Girls::select('girls.id','girls.cover','girls.name','girls.height','girls.videolist','girls.boobs','girls.price','girls.massage','girls.threesome','girls.created_at')
-            ->where('girls.show',1)->orderBy('girls.id', 'desc')->get()->toArray();
+            ->where('girls.show',1)->orderBy('girls.updated_at', 'desc')->get()->toArray();
 
-        return view('frontend.index',['girls' => $girls,'base' => $this->base,'category' => $this->category])->with('username',session('username'))->with('coin',session('coin'))->with('uid',session('uid'));
+        return view('frontend.index',['girls' => $girls,'base' => $this->base,'category' => $this->category,'leftList' => $leftList])->with('username',session('username'))->with('coin',session('coin'))->with('uid',session('uid'));
 
+    }
+
+    //左边最近更新展示
+    private function leftshow($num=20){
+        $leftList = Girls::select('id','cover','name','height','videolist','boobs','price','massage','threesome','created_at')
+        ->where('show',1)->orderBy('created_at', 'desc')->get()->take($num)->toArray();
+
+        return $leftList;
     }
 
 
@@ -234,16 +245,17 @@ class IndexController extends MyController{
         if($id != 1000 and $id != 1001)
         {
             $girls = Girls::select('girls.id','girls.cover','girls.name','girls.height','girls.videolist','girls.boobs','girls.price','girls.massage','girls.threesome','girls.created_at')
-                ->where('area_id',$id)->where('girls.show',1)->orderBy('girls.id', 'desc')->get()->toArray();
+                ->where('area_id',$id)->where('girls.show',1)->orderBy('girls.updated_at', 'desc')->get()->toArray();
 
         }elseif ($id == 1000){
             $girls = Girls::select('girls.id','girls.cover','girls.name','girls.height','girls.videolist','girls.boobs','girls.price','girls.massage','girls.threesome','girls.created_at')
-                ->where('girls.massage',2)->where('girls.show',1)->orderBy('girls.id', 'desc')->get()->toArray();
+                ->where('girls.massage',2)->where('girls.show',1)->orderBy('girls.updated_at', 'desc')->get()->toArray();
         }elseif($id == 1001){
             $girls = Girls::select('girls.id','girls.cover','girls.name','girls.height','girls.videolist','girls.boobs','girls.price','girls.massage','girls.threesome','girls.created_at')
-                ->where('girls.videolist','!=','')->where('girls.show',1)->orderBy('girls.id', 'desc')->get()->toArray();
+                ->where('girls.videolist','!=','')->where('girls.show',1)->orderBy('girls.updated_at', 'desc')->get()->toArray();
         }
-        return view('frontend.index',['girls' => $girls,'base' => $this->base,'category' => $this->category])->with('username',session('username'))->with('coin',session('coin'))->with('uid',session('uid'));
+        $leftList = $this->leftshow();
+        return view('frontend.index',['girls' => $girls,'base' => $this->base,'category' => $this->category,'leftList' => $leftList])->with('username',session('username'))->with('coin',session('coin'))->with('uid',session('uid'));
 
     }
 
@@ -252,8 +264,9 @@ class IndexController extends MyController{
         $key = request()->input('key');
         $girls = Girls::select('girls.id','girls.cover','girls.name','girls.height','girls.videolist','girls.boobs','girls.price','girls.massage','girls.threesome','girls.created_at')
             ->where('name','like','%'.$key.'%')->where('girls.show',1)->orderBy('girls.id', 'desc')->get()->toArray();
+        $leftList = $this->leftshow();
 
-        return view('frontend.index',['girls' => $girls,'base' => $this->base,'category' => $this->category,'keyword' => $key])->with('username',session('username'))->with('coin',session('coin'))->with('uid',session('uid'));
+        return view('frontend.index',['girls' => $girls,'base' => $this->base,'category' => $this->category,'keyword' => $key,'leftList' => $leftList])->with('username',session('username'))->with('coin',session('coin'))->with('uid',session('uid'));
 
     }
 

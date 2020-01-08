@@ -37,7 +37,7 @@
         <div class="i-title"><h1>Video/视频</h1></div>
         <div style="text-align:center;">
             @foreach($videosArray as $video)
-            <video src="{{$video}}" controls="controls" style="height:400px;width:550px;background-color:#000;"></video>
+            <video src="{{$video}}" controls="controls" class="videoshow"></video>
             @endforeach
         </div>
     </div>
@@ -156,14 +156,14 @@
                     <li><img src="/resources/views/frontend/images/face/33.gif" data-name="[em33]" class="fimg"></li>
                 </ul>
             </div>
-            <div class="row">
+            <div class="row row-two">
                 <label>Nickname 昵称</label>
                 <input name="nickname" value="{{isset($username)?$username:''}}">
-                <label style="margin-left:20px;">Content 内容</label>
+                <label class="hidden-content">Content 内容</label>
                 <input name="tel" placeholder="内容隐藏，Content Concealed">
-                <button class="btn">Submit 提交</button>
+                <button class="btn comment-btn">Submit 提交</button>
             </div>
-            <div class="row" style="font-size:18px;color:black;text-align:center;padding-top:10px;">
+            <div class="row row-three">
                 <p>If there are fake photos or bad service, Leave your phone number or <strong>wechat ID</strong> for us to verify</p>
                 <p>如果有假照片 或者 服务不好的地方 您可以留下手机号码或微信号方便我们核实</p>
             </div>

@@ -5,13 +5,17 @@
     <title>{{$base['title']}}</title>
     <meta name="keywords" content="{!! $base['keywords'] !!}" />
     <meta name="description" content="{!!$base['description']!!}" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"/>
     <link href="<?php echo asset( "/resources/views/frontend/images/favicon.ico?ver=1.0") ?>" rel="shortcut icon" />
     <link rel="stylesheet" href="<?php echo asset( "/resources/views/frontend/css/css.css?ver=1.0") ?>">
     <script src="<?php echo asset( "/resources/views/frontend/js/jquery.min.js?ver=1.0") ?>"></script>
     <script src="<?php echo asset( "/resources/views/frontend/js/layer/layer.js") ?>"></script>
     <script src="<?php echo asset( "/resources/views/frontend/js/clipboard.min.js") ?>"></script>
 </head>
+<style>
 
+
+</style>
 <body>
 <div class="header">
     <div class="logo wrap">
@@ -19,10 +23,10 @@
 
     </div>
     <div class="search wrap">
-        <div style="width: 450px;float: left">
+        <div class="searchbox">
             <form method="post" action="/search.html">
                 {{csrf_field()}}
-                <input type="text" name="key" id="key" placeholder="输入关键词" value="{{isset($keyword)?$keyword:''}}"><button>搜索SEARCH</button>
+                <input type="text" name="key" id="key" placeholder="输入关键词" value="{{isset($keyword)?$keyword:''}}"><button>SEARCH</button>
             </form>
         </div>
 
