@@ -37,7 +37,7 @@
                             <th width="50">标题</th>
                             <th width="60">封面</th>
                             <th width="50">名字</th>
-                            <th width="80">下架时间</th>
+                            <th width="90">下架时间</th>
                             <th width="80">年龄</th>
                             <th width="80">身高</th>
                             <th width="80">胸围</th>
@@ -65,7 +65,7 @@
                                 <td><a style="color: green;" href="/backend/girls/girlphotolist/{{$data['id']}}">{{$data['title']}}</a></td>
                                 <td><a href="{{$data['cover']}}" target="_blank"><img src="{{$data['cover']}}" style="width:50px;" /></a></td>
                                 <td>{{$data['name']}}</td>
-                                <td>{{$data['expire_date']}}</td>
+                                <td>@if(date("Ymd",strtotime($data['expire_date'])) >= date("Ymd")) {{$data['expire_date']}} @else <em style="color: red;">已下架</em> @endif</td>
                                 <td>{{$data['age']}}</td>
                                 <td>{{$data['height']}}</td>
                                 <td>{{$data['boobs']}}</td>

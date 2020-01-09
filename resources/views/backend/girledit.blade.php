@@ -18,7 +18,7 @@
 </head>
 <body>
 <script type="text/javascript" src="<?php echo asset( "/resources/views/backend/js/jquery.min.1.9.1.js") ?>"></script>
-<script type="text/javascript" src="<?php echo asset( "/resources/views/backend/js/My97DatePicker/4.8/WdatePicker.js"); ?>"></script>
+<script type="text/javascript" src="<?php echo asset( "/resources/views/backend/js/laydate/laydate.js"); ?>"></script>
 <script type="text/javascript" src="<?php echo asset( "/resources/views/backend/js/layer/layer.js") ?>"></script>
 
 <script type="text/javascript" src="<?php echo asset( "/resources/views/backend/js/include/girls.js?ver=1.2"); ?>"></script>
@@ -195,7 +195,10 @@
 </div>
 
 <script>
-
+    laydate.render({
+        elem: '#expire_date'
+        ,type: 'date'
+    });
 </script>
 
 

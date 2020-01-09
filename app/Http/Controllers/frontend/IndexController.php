@@ -20,6 +20,7 @@ class IndexController extends MyController{
     private $attribute;
     private $base;
     private $category;
+    private $nowDate;
 
     public function __construct()
     {
@@ -34,6 +35,7 @@ class IndexController extends MyController{
         //栏目
         $this->category = Area::orderBy('priority','desc')->get()->toArray();
 
+        $this->nowDate = date("Y-m-d",time());
     }
 
     //首页
@@ -41,7 +43,7 @@ class IndexController extends MyController{
         $leftList = $this->leftshow();
 
         $girls = Girls::select('girls.id','girls.cover','girls.name','girls.height','girls.videolist','girls.boobs','girls.price','girls.massage','girls.threesome','girls.created_at')
-            ->where('girls.show',1)->orderBy('girls.updated_at', 'desc')->get()->toArray();
+            ->where('girls.show',1)->where('expire_date','>=',$this->nowDate)->orderBy('girls.updated_at', 'desc')->get()->toArray();
 
         return view('frontend.index',['girls' => $girls,'base' => $this->base,'category' => $this->category,'leftList' => $leftList])->with('username',session('username'))->with('coin',session('coin'))->with('uid',session('uid'));
 
