@@ -18,6 +18,7 @@ function girladdprocess() {
     var price  = $.trim( $('#price').val() );
     var mobile = $.trim( $('#mobile').val() );
     var service  = $.trim( $('#service').val() );
+    var expire_date = $.trim( $('#expire_date').val() );
 
     if(title == '')
     {
@@ -52,6 +53,11 @@ function girladdprocess() {
     if(service == '')
     {
         layer.msg('服务不能为空');
+        return false;
+    }
+    if(expire_date == '')
+    {
+        layer.msg('时间不能为空');
         return false;
     }
 
@@ -100,6 +106,7 @@ function girleditprocess(id) {
     var price  = $.trim( $('#price').val() );
     var mobile = $.trim( $('#mobile').val() );
     var service  = $.trim( $('#service').val() );
+    var expire_date = $.trim( $('#expire_date').val() );
 
     if(title == '')
     {
@@ -134,6 +141,11 @@ function girleditprocess(id) {
     if(service == '')
     {
         layer.msg('服务不能为空');
+        return false;
+    }
+    if(expire_date == '')
+    {
+        layer.msg('时间不能为空');
         return false;
     }
 

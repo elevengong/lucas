@@ -11,15 +11,14 @@
     <link href="<?php echo asset( "/resources/views/backend/static/h-ui.admin/css/H-ui.login.css") ?>" rel="stylesheet" type="text/css" />
     <link href="<?php echo asset( "/resources/views/backend/static/h-ui.admin/css/style.css") ?>" rel="stylesheet" type="text/css" />
     <link href="<?php echo asset( "/resources/views/backend/static/Hui-iconfont/1.0.8/iconfont.css") ?>" rel="stylesheet" type="text/css" />
-
     <title>添加分类</title>
     <meta name="keywords" content="添加">
     <meta name="description" content="添加分类">
 </head>
 <body>
 <script type="text/javascript" src="<?php echo asset( "/resources/views/backend/js/jquery.min.1.9.1.js") ?>"></script>
-<script type="text/javascript" src="<?php echo asset( "/resources/views/backend/js/My97DatePicker/4.8/WdatePicker.js"); ?>"></script>
 <script type="text/javascript" src="<?php echo asset( "/resources/views/backend/js/layer/layer.js") ?>"></script>
+<script type="text/javascript" src="<?php echo asset( "/resources/views/backend/js/laydate/laydate.js"); ?>"></script>
 
 <script type="text/javascript" src="<?php echo asset( "/resources/views/backend/js/include/girls.js?ver=1.2"); ?>"></script>
 <div id="frm_account" class="col-xs-12" style="text-align: center;">
@@ -47,6 +46,13 @@
             <label class="form-label col-xs-3 col-sm-3">名字：</label>
             <div class="col-xs-9 col-sm-9">
                 <input type="text" class="input-text" value="" id="name" name="name" />
+            </div>
+        </div>
+
+        <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">妹子下架时间：</label>
+            <div class="col-xs-9 col-sm-9">
+                <input type="text" id="expire_date" name="expire_date" value="{{date('Y-m-d', strtotime ("+1 month", time()))}}" autocomplete='off' placeholder="妹子下架时间" class="input-text js-datetimepicker">
             </div>
         </div>
 
@@ -187,9 +193,11 @@
 
     </form>
 </div>
-
-<script>
-
+<script type="text/javascript">
+    laydate.render({
+        elem: '#expire_date'
+        ,type: 'date'
+    });
 </script>
 
 

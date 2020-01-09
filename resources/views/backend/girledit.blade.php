@@ -54,6 +54,13 @@
         </div>
 
         <div class="col-xs-12 row cl">
+            <label class="form-label col-xs-3 col-sm-3">妹子下架时间：</label>
+            <div class="col-xs-9 col-sm-9">
+                <input type="text" id="expire_date" name="expire_date" value="{{$girl['expire_date']}}" autocomplete='off' placeholder="妹子下架时间" class="input-text js-datetimepicker">
+            </div>
+        </div>
+
+        <div class="col-xs-12 row cl">
             <label class="form-label col-xs-3 col-sm-3">年龄：</label>
             <div class="col-xs-9 col-sm-9">
                 <input type="text" class="input-text" value="{{$girl['age']}}" id="age" name="age" />
