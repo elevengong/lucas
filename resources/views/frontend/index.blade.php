@@ -8,7 +8,7 @@
                 <ul>
                     @foreach($girls as $girl)
                         <li>
-                            <a href="/beauty/{{$girl['id']}}.html" class="img"><img class="lazy" data-original="{{$girl['cover']}}"></a>
+                            <a href="/model/{{$girl['id']}}.html" class="img"><img class="lazy" data-original="{{$girl['cover']}}"></a>
                             <p><em>{{$girl['name']}}</em></p>
                             <p>身高：{{$girl['height']}}/罩杯：{{$girl['boobs']}}</p>
                             <p>{{$girl['price']}}</p>
@@ -28,7 +28,7 @@
                 <ul>
                     @foreach($leftList as $list)
                     <li>
-                        <a href="/beauty/{{$list['id']}}.html" class="img"><img src="{{$list['cover']}}"></a>
+                        <a href="/model/{{$list['id']}}.html" class="img"><img src="{{$list['cover']}}"></a>
                         <p><em>{{$list['name']}}</em></p>
                         <p>身高：{{$list['height']}}/罩杯：{{$list['boobs']}}</p>
                         <p>{{$list['price']}}</p>

@@ -15,7 +15,7 @@ Route::group(['middleware' => ['web']],function () {
 
  //---------------------前端------------------------------------------------
     Route::get('/','frontend\IndexController@index');
-    Route::get('/beauty/{id}.html','frontend\IndexController@beauty')->where(['id' => '[0-9]+']);
+    Route::get('/model/{id}.html','frontend\IndexController@beauty')->where(['id' => '[0-9]+']);
 
     //登陆注册
     Route::any('/login.html','frontend\IndexController@login');
@@ -34,6 +34,15 @@ Route::group(['middleware' => ['web']],function () {
     //评论
     Route::post('/reply','frontend\IndexController@reply');
 
+    //采集
+//    Route::any('/caijilist','frontend\CaijiController@caijilist');
+//    Route::any('/caijicontent','frontend\CaijiController@caijicontent');
+//    Route::any('/caijiphoto','frontend\CaijiController@caijiphoto');
+//    Route::any('/randromcover','frontend\CaijiController@randromcover');
+
+
+    //计划任务
+    Route::get('/plan/plantask','frontend\PlanController@plantask');
 
     //---------------------后台------------------------
     Route::any('/backend/login','backend\LoginController@login');
