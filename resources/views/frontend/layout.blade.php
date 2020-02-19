@@ -37,12 +37,12 @@
             <div class="memberbox">
                 <ul style="margin-top: 6px;">
                     <li class="reg_share">
-                        <span>用户:<a href="/user/center.html">{{$username}}</a></span>
+                        <span>用户:{{$username}}</span>
                     </li>
                     <li class="reg_share">
                         <span>新币:<a href="#">{{$coin}}个</a></span>
-                    </li>
                     <li class="reg_share">
+                    </li>
                     <button type="button" class="btn copyagentlink" data-clipboard-text="{{$base['domain']}}/agent/{{$uid}}" style="width:125px;height:25px;font-size:14px;border-radius:3px;">点击复制推广链接</button>
                     </li>
 
@@ -63,8 +63,8 @@
             @foreach($category as $ca)
             <li><a href="/category/{{$ca['id']}}.html" ><font color="black">{{$ca['area_name']}}</font></a></li>
             @endforeach
-            <li><a href="/category/1000.html"><font color="black">Massage/按摩</font></a></li>
             <li><a href="/category/1001.html"><font color="black">Video/视频</font></a></li>
+            <li><a href="/aboutus.html"><font color="black">联系我们</font></a></li>
 
         </ul>
     </div>

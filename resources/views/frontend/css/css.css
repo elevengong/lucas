@@ -171,7 +171,7 @@ button {
     /*text-indent: -9999px;*/
     /*text-indent: 40px;*/
     background: url(../images/logo.png?v1) no-repeat left center;
-    font-size: 65px;
+    font-size: 52px;
     text-align: center;
 }
 
@@ -989,7 +989,7 @@ input[type="text"], input[type="password"], textarea {
     .header .logo h1 a {
         height:auto;
         line-height: 125px;
-        font-size: 65px;
+        font-size: 30px;
     }
     .searchbox {
         width: 100%;

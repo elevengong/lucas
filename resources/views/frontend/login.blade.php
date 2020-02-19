@@ -26,7 +26,7 @@
                             </div>
                             <div class="input_field">
                                 <span class="input_fieldTitle">密码</span>
-                                <input type="password" name="pwd" id="pwd" autocomplete="off" placeholder="请输入7-12字符" tabindex="2">
+                                <input type="password" name="pwd" id="pwd" autocomplete="off" placeholder="请输入6-12字符" tabindex="2">
                             </div>
                             <div class="row cl">
                                 <div class="formControls col-xs-8 col-xs-offset-3">

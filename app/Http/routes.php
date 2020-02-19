@@ -17,6 +17,8 @@ Route::group(['middleware' => ['web']],function () {
     Route::get('/','frontend\IndexController@index');
     Route::get('/model/{id}.html','frontend\IndexController@beauty')->where(['id' => '[0-9]+']);
 
+    Route::get('/aboutus.html','frontend\IndexController@aboutus');
+
     //登陆注册
     Route::any('/login.html','frontend\IndexController@login');
     Route::any('/register.html','frontend\IndexController@register');

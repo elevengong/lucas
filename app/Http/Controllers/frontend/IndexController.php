@@ -14,7 +14,7 @@ use App\Http\Controllers\MyController;
 use App\Http\Requests;
 use Crypt;
 
-
+require_once 'resources/org/phpqrcode/phpqrcode.php';
 class IndexController extends MyController{
 
     private $attribute;
@@ -336,5 +336,35 @@ class IndexController extends MyController{
         }
     }
 
+    public function aboutus(){
+
+        if(isset($this->base['weixin']))
+        {
+            $png = $this->scerweima($this->base['weixin']);
+        }else{
+            $png = '';
+        }
+        return view('frontend.aboutus',['base' => $this->base,'category'=>$this->category,'png'=>$png])->with('username',session('username'))->with('coin',session('coin'))->with('uid',session('uid'));
+    }
+
+    private function scerweima($content=''){
+        $value = $content;         //二维码内容
+        $errorCorrectionLevel = 'H';  //容错级别
+        $matrixPointSize = 7;      //生成图片大小
+        //生成二维码图片
+//        $filename = 'public/'.microtime().'.png';
+        $filename = 'public/uploads/weixin.png';
+        $qrcode = new \QRcode;
+        $qrcode->png($value,$filename , $errorCorrectionLevel, $matrixPointSize, 2);
+        //QRcode::png($value,false , "H", $matrixPointSize, 2);
+
+        $QR = $filename;        //已经生成的原始二维码图片文件
+        $QR = imagecreatefromstring(file_get_contents($QR));
+        //输出图片
+        imagepng($QR, 'qrcode.png');
+        imagedestroy($QR);
+        return '<img src="qrcode.png" alt="使用微信扫描支付">';
+
+    }
 
 }
